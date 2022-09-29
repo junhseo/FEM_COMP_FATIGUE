@@ -1,0 +1,1526 @@
+# Save by jhseo on 2022_09_29-16.09.57; build 2022.HF2 2022_03_21-08.37.34 176360
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(0.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].FixedConstraint(entity=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0])
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(0.0, 40.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(8.0, 40.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(5.0, 40.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(5.0, 25.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(8.0, 25.0))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], ))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    0.0, 40.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 40.0), point2=(
+    8.0, 40.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(8.0, 40.0), point2=(
+    8.0, 25.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(8.0, 25.0), point2=(
+    5.0, 25.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(5.0, 25.0), point2=(
+    5.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(5.0, 0.0), point2=(
+    0.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    30.00905418396, 15.3528537750244), value=25.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[14], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[15])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    36.695915222168, 31.4137210845947), value=15.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[10], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[11])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    8.94542503356934, 51.6571083068848), value=8.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[8], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[9])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    8.2767391204834, 16.6912479400635), value=3.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[12], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[13])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(0.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(5.0, 25.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(8.0, 25.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(8.0, 40.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(0.0, 40.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(5.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    0.0, 40.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 40.0), point2=(
+    8.0, 40.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(8.0, 40.0), point2=(
+    8.0, 25.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(8.0, 25.0), point2=(
+    5.0, 25.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(5.0, 25.0), point2=(
+    5.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(5.0, 0.0), point2=(
+    0.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7])
+mdb.models['Model-1'].sketches['__profile__'].setAsConstruction(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2]))
+mdb.models['Model-1'].sketches['__profile__'].FilletByRadius(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], curve2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], nearPoint1=(
+    5.38465976715088, 19.6671123504639), nearPoint2=(6.94451236724854, 
+    25.2608776092529), radius=5.0)
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(8.0, 25.0), point2=(
+    8.0, 22.5))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[9])
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9], point1=(
+    8.10983943939209, 23.6468715667725))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5], point1=(
+    8.60925960540771, 24.8282356262207))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8], point1=(
+    8.79086971282959, 24.9191074371338))
+mdb.models['Model-1'].sketches['__profile__'].copyMirror(mirrorLine=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[11], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[10], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3]))
+mdb.models['Model-1'].sketches['__profile__'].copyMirror(mirrorLine=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7], objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[10], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[11], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[12], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[13], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[14], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[15], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[16], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], 
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], 
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2], 
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], 
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4]))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='COMPOSITE', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['COMPOSITE'].BaseSolidExtrude(depth=0.2, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+# Save by jhseo on 2022_09_29-16.16.46; build 2022.HF2 2022_03_21-08.37.34 176360
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    3.75, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    3.04892730712891, 8.88461303710938), value=5.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    5.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    3.22827911376953, 10.230770111084), value=5.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Part-2', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-2'].BaseShellExtrude(depth=0.2, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='COMPOSITE-1', 
+    part=mdb.models['Model-1'].parts['COMPOSITE'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Part-2-1', 
+    part=mdb.models['Model-1'].parts['Part-2'])
+mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].translate(vector=(8.5, 
+    0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-2-1', ), 
+    vector=(-13.5, 0.0, 0.0))
+mdb.models['Model-1'].Material(name='COMPOSITE')
+mdb.models['Model-1'].materials['COMPOSITE'].Elastic(table=((150000.0, 9000.0, 
+    9000.0, 0.34, 0.34, 0.4, 5000.0, 5000.0, 5000.0), ), type=
+    ENGINEERING_CONSTANTS)
+mdb.models['Model-1'].materials['COMPOSITE'].MaxsDamageInitiation(table=((60.0, 
+    180.0, 180.0), ))
+mdb.models['Model-1'].materials['COMPOSITE'].maxsDamageInitiation.DamageEvolution(
+    mixedModeBehavior=BK, power=2.2, table=((0.3, 0.8, 0.8), ), type=ENERGY)
+mdb.models['Model-1'].materials['COMPOSITE'].maxsDamageInitiation.DamageStabilizationCohesive(
+    cohesiveCoeff=1e-05)
+mdb.models['Model-1'].HomogeneousSolidSection(material='COMPOSITE', name=
+    'Section-1', thickness=None)
+mdb.models['Model-1'].parts['COMPOSITE'].Set(cells=
+    mdb.models['Model-1'].parts['COMPOSITE'].cells.getSequenceFromMask((
+    '[#1 ]', ), ), name='Set-1')
+mdb.models['Model-1'].parts['COMPOSITE'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['COMPOSITE'].sets['Set-1'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['COMPOSITE'].DatumCsysByThreePoints(coordSysType=
+    CARTESIAN, name='Datum csys-1', origin=
+    mdb.models['Model-1'].parts['COMPOSITE'].vertices[32], point1=
+    mdb.models['Model-1'].parts['COMPOSITE'].vertices[12], point2=
+    mdb.models['Model-1'].parts['COMPOSITE'].InterestingPoint(
+    mdb.models['Model-1'].parts['COMPOSITE'].edges[40], MIDDLE))
+mdb.models['Model-1'].parts['COMPOSITE'].MaterialOrientation(
+    additionalRotationField='', additionalRotationType=ROTATION_ANGLE, angle=
+    90.0, axis=AXIS_3, fieldName='', localCsys=
+    mdb.models['Model-1'].parts['COMPOSITE'].datums[3], orientationType=SYSTEM, 
+    region=Region(
+    cells=mdb.models['Model-1'].parts['COMPOSITE'].cells.getSequenceFromMask(
+    mask=('[#1 ]', ), )), stackDirection=STACK_3)
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].StaticStep(name='Step-1', previous='Initial')
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(variables=(
+    'S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'CSTRESS', 'CDISP', 
+    'PHILSM', 'PSILSM', 'STATUSXFEM', 'LOADSXFEM'))
+mdb.models['Model-1'].steps['Step-1'].setValues(adaptiveDampingRatio=0.05, 
+    continueDampingFactors=False, initialInc=0.01, maxNumInc=10000, minInc=
+    1e-09, stabilizationMagnitude=0.0002, stabilizationMethod=
+    DISSIPATED_ENERGY_FRACTION)
+mdb.models['Model-1'].rootAssembly.engineeringFeatures.XFEMCrack(crackDomain=
+    Region(
+    cells=mdb.models['Model-1'].rootAssembly.instances['COMPOSITE-1'].cells.getSequenceFromMask(
+    mask=('[#1 ]', ), )), crackLocation=Region(
+    faces=mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), name='Crack-1')
+mdb.models['Model-1'].XFEMCrackGrowth(crackName='Crack-1', createStepName=
+    'Initial', name='Int-1')
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-1', side1Faces=
+    mdb.models['Model-1'].rootAssembly.instances['COMPOSITE-1'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['Model-1'].Pressure(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', magnitude=-100.0, name='Load-1', 
+    region=mdb.models['Model-1'].rootAssembly.surfaces['Surf-1'])
+mdb.models['Model-1'].rootAssembly.Set(faces=
+    mdb.models['Model-1'].rootAssembly.instances['COMPOSITE-1'].faces.getSequenceFromMask(
+    ('[#40 ]', ), ), name='Set-3')
+mdb.models['Model-1'].EncastreBC(createStepName='Initial', localCsys=None, 
+    name='BC-1', region=mdb.models['Model-1'].rootAssembly.sets['Set-3'])
+mdb.models['Model-1'].boundaryConditions['BC-1'].move('Initial', 'Step-1')
+mdb.models['Model-1'].rootAssembly.Set(cells=
+    mdb.models['Model-1'].rootAssembly.instances['COMPOSITE-1'].cells.getSequenceFromMask(
+    ('[#1 ]', ), ), edges=
+    mdb.models['Model-1'].rootAssembly.instances['COMPOSITE-1'].edges.getSequenceFromMask(
+    ('[#14000 #1800 ]', ), ), faces=
+    mdb.models['Model-1'].rootAssembly.instances['COMPOSITE-1'].faces.getSequenceFromMask(
+    ('[#3208 ]', ), ), name='Set-4')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-2', region=mdb.models['Model-1'].rootAssembly.sets['Set-4'], u1=0.0, 
+    u2=UNSET, u3=0.0, ur1=0.0, ur2=0.0, ur3=0.0)
+mdb.models['Model-1'].parts['COMPOSITE'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=1.0)
+mdb.models['Model-1'].parts['COMPOSITE'].generateMesh()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['COMPOSITE'].deleteMesh()
+mdb.models['Model-1'].parts['COMPOSITE'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.5)
+mdb.models['Model-1'].parts['COMPOSITE'].generateMesh()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='XFEM_CRACK_COMPOSITE', 
+    nodalOutputPrecision=SINGLE, numCpus=4, numDomains=4, numGPUs=0, 
+    numThreadsPerMpiProcess=1, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['XFEM_CRACK_COMPOSITE'].submit(consistencyChecking=OFF)
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_COMPOSITE\\05_XFEM_Crack_Propagation\\XFEM_CRACK_COMPOSITE.odb', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 26088, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'memory': 101.0})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 65210.0, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 29.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.01, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 1, 'stepTime': 0.01, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.02, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 2, 'stepTime': 0.02, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.035, 
+    'attempts': 1, 'timeIncrement': 0.015, 'increment': 3, 'stepTime': 0.035, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.0575, 
+    'attempts': 1, 'timeIncrement': 0.0225, 'increment': 4, 'stepTime': 0.0575, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': 1, 'timeIncrement': 0.03375, 'increment': 5, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 5, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 1U', 'timeIncrement': 0.050625, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 2U', 'timeIncrement': 0.027614982032449, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 3U', 'timeIncrement': 0.00902870440383422, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 4U', 'timeIncrement': 0.00234477118789666, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 5U', 'timeIncrement': 0.000490945746600133, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Too many attempts made for this increment', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 6U', 'timeIncrement': 0.000490945746600133, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 6, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ABORTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.models['Model-1'].steps['Step-1'].setValues(maxNumInc=1000000)
+mdb.jobs['XFEM_CRACK_COMPOSITE'].submit(consistencyChecking=OFF)
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_COMPOSITE\\05_XFEM_Crack_Propagation\\XFEM_CRACK_COMPOSITE.odb', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 20980, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'memory': 101.0})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 65210.0, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 29.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.01, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 1, 'stepTime': 0.01, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.02, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 2, 'stepTime': 0.02, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.035, 
+    'attempts': 1, 'timeIncrement': 0.015, 'increment': 3, 'stepTime': 0.035, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.0575, 
+    'attempts': 1, 'timeIncrement': 0.0225, 'increment': 4, 'stepTime': 0.0575, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': 1, 'timeIncrement': 0.03375, 'increment': 5, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 5, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 1U', 'timeIncrement': 0.050625, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 2U', 'timeIncrement': 0.0276149820324491, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 3U', 'timeIncrement': 0.00902870440383423, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 4U', 'timeIncrement': 0.00234477118789666, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 5U', 'timeIncrement': 0.000490945746600133, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Too many attempts made for this increment', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 6U', 'timeIncrement': 0.000490945746600133, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 6, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ABORTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.models['Model-1'].parts['COMPOSITE'].deleteMesh()
+mdb.models['Model-1'].parts['COMPOSITE'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=1.0)
+mdb.models['Model-1'].parts['COMPOSITE'].generateMesh()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.jobs['XFEM_CRACK_COMPOSITE'].submit(consistencyChecking=OFF)
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_COMPOSITE\\05_XFEM_Crack_Propagation\\XFEM_CRACK_COMPOSITE.odb', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 25144, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'memory': 39.0})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 65210.0, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 21.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.01, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 1, 'stepTime': 0.01, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.02, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 2, 'stepTime': 0.02, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.035, 
+    'attempts': 1, 'timeIncrement': 0.015, 'increment': 3, 'stepTime': 0.035, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.0575, 
+    'attempts': 1, 'timeIncrement': 0.0225, 'increment': 4, 'stepTime': 0.0575, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': 1, 'timeIncrement': 0.03375, 'increment': 5, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 5, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 1U', 'timeIncrement': 0.050625, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 2U', 'timeIncrement': 0.0335096159909019, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 3U', 'timeIncrement': 0.0126135257025794, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.0950529851679792, 'attempts': 4, 
+    'timeIncrement': 0.0038029851679792, 'increment': 6, 
+    'stepTime': 0.0950529851679792, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 6, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.100757462919948, 'attempts': 1, 
+    'timeIncrement': 0.0057044777519688, 'increment': 7, 
+    'stepTime': 0.100757462919948, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 7, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.109314179547901, 'attempts': 1, 
+    'timeIncrement': 0.00855671662795321, 'increment': 8, 
+    'stepTime': 0.109314179547901, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 8, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.122149254489831, 'attempts': 1, 
+    'timeIncrement': 0.0128350749419298, 'increment': 9, 
+    'stepTime': 0.122149254489831, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 9, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.122149254489831, 'attempts': ' 1U', 
+    'timeIncrement': 0.0192526124128947, 'increment': 10, 
+    'stepTime': 0.122149254489831, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.122149254489831, 'attempts': ' 2U', 
+    'timeIncrement': 0.0167844443019798, 'increment': 10, 
+    'stepTime': 0.122149254489831, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.129797567986237, 'attempts': 3, 
+    'timeIncrement': 0.00764831349640608, 'increment': 10, 
+    'stepTime': 0.129797567986237, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 10, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.129797567986237, 'attempts': ' 1U', 
+    'timeIncrement': 0.0114724702446091, 'increment': 11, 
+    'stepTime': 0.129797567986237, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.129797567986237, 'attempts': ' 2U', 
+    'timeIncrement': 0.0100185206196654, 'increment': 11, 
+    'stepTime': 0.129797567986237, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.134287488936026, 'attempts': 3, 
+    'timeIncrement': 0.00448992094978899, 'increment': 11, 
+    'stepTime': 0.134287488936026, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 11, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.134287488936026, 'attempts': ' 1U', 
+    'timeIncrement': 0.00673488142468349, 'increment': 12, 
+    'stepTime': 0.134287488936026, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.134287488936026, 'attempts': ' 2U', 
+    'timeIncrement': 0.0059344658803489, 'increment': 12, 
+    'stepTime': 0.134287488936026, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.134287488936026, 'attempts': ' 3U', 
+    'timeIncrement': 0.00265237386457307, 'increment': 12, 
+    'stepTime': 0.134287488936026, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.135127476699337, 'attempts': 4, 
+    'timeIncrement': 0.00083998776331131, 'increment': 12, 
+    'stepTime': 0.135127476699337, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 12, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.136387458344304, 'attempts': 1, 
+    'timeIncrement': 0.00125998164496697, 'increment': 13, 
+    'stepTime': 0.136387458344304, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 13, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.136387458344304, 'attempts': ' 1U', 
+    'timeIncrement': 0.00188997246745045, 'increment': 14, 
+    'stepTime': 0.136387458344304, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.136859951461167, 'attempts': 2, 
+    'timeIncrement': 0.000472493116862612, 'increment': 14, 
+    'stepTime': 0.136859951461167, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 14, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 5 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.136859951461167, 'attempts': ' 1U', 
+    'timeIncrement': 0.000708739675293918, 'increment': 15, 
+    'stepTime': 0.136859951461167, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.136859951461167, 'attempts': ' 2U', 
+    'timeIncrement': 0.000177184918823479, 'increment': 15, 
+    'stepTime': 0.136859951461167, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.136916802601666, 'attempts': 3, 
+    'timeIncrement': 5.68511404994409e-05, 'increment': 15, 
+    'stepTime': 0.136916802601666, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 15, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137002079312416, 'attempts': 1, 
+    'timeIncrement': 8.52767107491613e-05, 'increment': 16, 
+    'stepTime': 0.137002079312416, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 16, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137002079312416, 'attempts': ' 1U', 
+    'timeIncrement': 0.000127915066123742, 'increment': 17, 
+    'stepTime': 0.137002079312416, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137002079312416, 'attempts': ' 2U', 
+    'timeIncrement': 8.38482257132033e-05, 'increment': 17, 
+    'stepTime': 0.137002079312416, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137035122734676, 'attempts': 3, 
+    'timeIncrement': 3.30434222599894e-05, 'increment': 17, 
+    'stepTime': 0.137035122734676, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 17, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137035122734676, 'attempts': ' 1U', 
+    'timeIncrement': 4.95651333899841e-05, 'increment': 18, 
+    'stepTime': 0.137035122734676, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137035122734676, 'attempts': ' 2U', 
+    'timeIncrement': 4.22381521162428e-05, 'increment': 18, 
+    'stepTime': 0.137035122734676, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137053813889024, 'attempts': 3, 
+    'timeIncrement': 1.8691154348042e-05, 'increment': 18, 
+    'stepTime': 0.137053813889024, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 18, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137053813889024, 'attempts': ' 1U', 
+    'timeIncrement': 2.8036731522063e-05, 'increment': 19, 
+    'stepTime': 0.137053813889024, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137053813889024, 'attempts': ' 2U', 
+    'timeIncrement': 2.54968433288648e-05, 'increment': 19, 
+    'stepTime': 0.137053813889024, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137065551892246, 'attempts': 3, 
+    'timeIncrement': 1.17380032221506e-05, 'increment': 19, 
+    'stepTime': 0.137065551892246, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 19, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137083158897079, 'attempts': 1, 
+    'timeIncrement': 1.7607004833226e-05, 'increment': 20, 
+    'stepTime': 0.137083158897079, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 20, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137109569404329, 'attempts': 1, 
+    'timeIncrement': 2.64105072498389e-05, 'increment': 21, 
+    'stepTime': 0.137109569404329, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 21, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137149185165204, 'attempts': 1, 
+    'timeIncrement': 3.96157608747584e-05, 'increment': 22, 
+    'stepTime': 0.137149185165204, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 22, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137149185165204, 'attempts': ' 1U', 
+    'timeIncrement': 5.94236413121376e-05, 'increment': 23, 
+    'stepTime': 0.137149185165204, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137164041075532, 'attempts': 2, 
+    'timeIncrement': 1.48559103280344e-05, 'increment': 23, 
+    'stepTime': 0.137164041075532, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 23, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137186324941024, 'attempts': 1, 
+    'timeIncrement': 2.22838654920516e-05, 'increment': 24, 
+    'stepTime': 0.137186324941024, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 24, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137219750739262, 'attempts': 1, 
+    'timeIncrement': 3.34257982380774e-05, 'increment': 25, 
+    'stepTime': 0.137219750739262, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 7, 
+    'phase': STANDARD_PHASE, 'equilibrium': 7})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 25, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137219750739262, 'attempts': ' 1U', 
+    'timeIncrement': 3.34257982380774e-05, 'increment': 26, 
+    'stepTime': 0.137219750739262, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 9, 
+    'phase': STANDARD_PHASE, 'equilibrium': 9})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137228107188821, 'attempts': 2, 
+    'timeIncrement': 8.35644955951935e-06, 'increment': 26, 
+    'stepTime': 0.137228107188821, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 26, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.137236463638381, 'attempts': 1, 
+    'timeIncrement': 8.35644955951935e-06, 'increment': 27, 
+    'stepTime': 0.137236463638381, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 27, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing element COMPOSITE-1.39 D.O.F. 3 ratio = 4.58216E+09.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.13724482008794, 'attempts': 1, 
+    'timeIncrement': 8.35644955951935e-06, 'increment': 28, 
+    'stepTime': 0.13724482008794, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 28, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing element COMPOSITE-1.39 D.O.F. 3 ratio = 4.57838E+09.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.13725735476228, 'attempts': 1, 
+    'timeIncrement': 1.2534674339279e-05, 'increment': 29, 
+    'stepTime': 0.13725735476228, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 29, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing element COMPOSITE-1.39 D.O.F. 3 ratio = 4.59835E+09.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.13725735476228, 'attempts': ' 1U', 
+    'timeIncrement': 1.88020115089185e-05, 'increment': 30, 
+    'stepTime': 0.13725735476228, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing element COMPOSITE-1.39 D.O.F. 3 ratio = 4.59808E+09.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.13725735476228, 'attempts': ' 2U', 
+    'timeIncrement': 9.12901071461567e-06, 'increment': 30, 
+    'stepTime': 0.13725735476228, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing element COMPOSITE-1.39 D.O.F. 3 ratio = 4.59630E+09.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.13725735476228, 'attempts': ' 3U', 
+    'timeIncrement': 2.21637269404246e-06, 'increment': 30, 
+    'stepTime': 0.13725735476228, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.13725735476228, 'attempts': ' 4U', 
+    'timeIncrement': 3.58744520832102e-07, 'increment': 30, 
+    'stepTime': 0.13725735476228, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.13725735476228, 'attempts': ' 5U', 
+    'timeIncrement': 4.35474615445153e-08, 'increment': 30, 
+    'stepTime': 0.13725735476228, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Too many attempts made for this increment', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.13725735476228, 'attempts': ' 6U', 
+    'timeIncrement': 4.35474615445153e-08, 'increment': 30, 
+    'stepTime': 0.13725735476228, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 30, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ABORTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.models['Model-1'].parts['COMPOSITE'].deleteMesh()
+mdb.models['Model-1'].parts['COMPOSITE'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.8)
+mdb.models['Model-1'].parts['COMPOSITE'].generateMesh()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].steps['Step-1'].setValues(maxNumInc=10000000)
+mdb.jobs['XFEM_CRACK_COMPOSITE'].submit(consistencyChecking=OFF)
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_COMPOSITE\\05_XFEM_Crack_Propagation\\XFEM_CRACK_COMPOSITE.odb', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 25812, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'memory': 50.0})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 65210.0, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 22.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.01, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 1, 'stepTime': 0.01, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.02, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 2, 'stepTime': 0.02, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.035, 
+    'attempts': 1, 'timeIncrement': 0.015, 'increment': 3, 'stepTime': 0.035, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.0575, 
+    'attempts': 1, 'timeIncrement': 0.0225, 'increment': 4, 'stepTime': 0.0575, 
+    'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': 1, 'timeIncrement': 0.03375, 'increment': 5, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 5, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 1U', 'timeIncrement': 0.050625, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {'totalTime': 0.09125, 
+    'attempts': ' 2U', 'timeIncrement': 0.0408509720598626, 'increment': 6, 
+    'stepTime': 0.09125, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.108952508981209, 'attempts': 3, 
+    'timeIncrement': 0.0177025089812091, 'increment': 6, 
+    'stepTime': 0.108952508981209, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 6, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.108952508981209, 'attempts': ' 1U', 
+    'timeIncrement': 0.0265537634718137, 'increment': 7, 
+    'stepTime': 0.108952508981209, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.108952508981209, 'attempts': ' 2U', 
+    'timeIncrement': 0.0224350003175478, 'increment': 7, 
+    'stepTime': 0.108952508981209, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.118727414351593, 'attempts': 3, 
+    'timeIncrement': 0.00977490537038423, 'increment': 7, 
+    'stepTime': 0.118727414351593, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 7, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.118727414351593, 'attempts': ' 1U', 
+    'timeIncrement': 0.0146623580555763, 'increment': 8, 
+    'stepTime': 0.118727414351593, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.118727414351593, 'attempts': ' 2U', 
+    'timeIncrement': 0.0129801998380153, 'increment': 8, 
+    'stepTime': 0.118727414351593, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.118727414351593, 'attempts': ' 3U', 
+    'timeIncrement': 0.00581994033517272, 'increment': 8, 
+    'stepTime': 0.118727414351593, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.120569437286255, 'attempts': 4, 
+    'timeIncrement': 0.00184202293466211, 'increment': 8, 
+    'stepTime': 0.120569437286255, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 8, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.123332471688249, 'attempts': 1, 
+    'timeIncrement': 0.00276303440199316, 'increment': 9, 
+    'stepTime': 0.123332471688249, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 9, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.127477023291238, 'attempts': 1, 
+    'timeIncrement': 0.00414455160298974, 'increment': 10, 
+    'stepTime': 0.127477023291238, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 10, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.133693850695723, 'attempts': 1, 
+    'timeIncrement': 0.00621682740448461, 'increment': 11, 
+    'stepTime': 0.133693850695723, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 11, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.14301909180245, 'attempts': 1, 
+    'timeIncrement': 0.00932524110672692, 'increment': 12, 
+    'stepTime': 0.14301909180245, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 12, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.15700695346254, 'attempts': 1, 
+    'timeIncrement': 0.0139878616600904, 'increment': 13, 
+    'stepTime': 0.15700695346254, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 13, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.15700695346254, 'attempts': ' 1U', 
+    'timeIncrement': 0.0209817924901356, 'increment': 14, 
+    'stepTime': 0.15700695346254, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.15700695346254, 'attempts': ' 2U', 
+    'timeIncrement': 0.0173034788442175, 'increment': 14, 
+    'stepTime': 0.15700695346254, 'step': 1, 'jobName': 'XFEM_CRACK_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.164507727030755, 'attempts': 3, 
+    'timeIncrement': 0.00750077356821464, 'increment': 14, 
+    'stepTime': 0.164507727030755, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 14, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.164507727030755, 'attempts': ' 1U', 
+    'timeIncrement': 0.011251160352322, 'increment': 15, 
+    'stepTime': 0.164507727030755, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.164507727030755, 'attempts': ' 2U', 
+    'timeIncrement': 0.00955689059916777, 'increment': 15, 
+    'stepTime': 0.164507727030755, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.164507727030755, 'attempts': ' 3U', 
+    'timeIncrement': 0.00415597792921066, 'increment': 15, 
+    'stepTime': 0.164507727030755, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.165811768473761, 'attempts': 4, 
+    'timeIncrement': 0.00130404144300607, 'increment': 15, 
+    'stepTime': 0.165811768473761, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 15, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.165811768473761, 'attempts': ' 1U', 
+    'timeIncrement': 0.00195606216450911, 'increment': 16, 
+    'stepTime': 0.165811768473761, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.165811768473761, 'attempts': ' 2U', 
+    'timeIncrement': 0.00119448505958876, 'increment': 16, 
+    'stepTime': 0.165811768473761, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.165811768473761, 'attempts': ' 3U', 
+    'timeIncrement': 0.000374259611968583, 'increment': 16, 
+    'stepTime': 0.165811768473761, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.165811768473761, 'attempts': ' 4U', 
+    'timeIncrement': 8.22994128618522e-05, 'increment': 16, 
+    'stepTime': 0.165811768473761, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.165811768473761, 'attempts': ' 5U', 
+    'timeIncrement': 1.42839121943537e-05, 'increment': 16, 
+    'stepTime': 0.165811768473761, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Too many attempts made for this increment', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.165811768473761, 'attempts': ' 6U', 
+    'timeIncrement': 1.42839121943537e-05, 'increment': 16, 
+    'stepTime': 0.165811768473761, 'step': 1, 
+    'jobName': 'XFEM_CRACK_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 16, 'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'THE ANALYSIS HAS BEEN TERMINATED DUE TO PREVIOUS ERRORS. ALL OUTPUT REQUESTS HAVE BEEN WRITTEN FOR THE LAST CONVERGED INCREMENT.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ABORTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+mdb.jobs['XFEM_CRACK_COMPOSITE']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'XFEM_CRACK_COMPOSITE'})
+# Save by jhseo on 2022_09_29-16.53.26; build 2022.HF2 2022_03_21-08.37.34 176360
