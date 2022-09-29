@@ -1,0 +1,22 @@
+Analysis initiated from SIMULIA established products
+Abaqus JOB GOODMAN_MODEL
+Abaqus 2022.HF2
+Abaqus License Manager checked out the following licenses:
+Abaqus/Standard checked out 8 tokens from Flexnet server abaqus.software.vt.edu.
+<243 out of 266 licenses remain available>.
+Begin Analysis Input File Processor
+9/29/2022 3:53:21 PM
+Run pre.exe
+9/29/2022 3:53:29 PM
+End Analysis Input File Processor
+Begin Abaqus/Standard Analysis
+9/29/2022 3:53:29 PM
+Run standard.exe
+9/29/2022 3:53:58 PM
+End Abaqus/Standard Analysis
+Begin SIM Wrap-up
+9/29/2022 3:53:59 PM
+Run SMASimUtility.exe
+9/29/2022 3:53:59 PM
+End SIM Wrap-up
+Abaqus JOB GOODMAN_MODEL COMPLETED

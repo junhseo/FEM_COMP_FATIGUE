@@ -1,0 +1,153 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.jobs['Job-1']
+del mdb.jobs['Job-2']
+del mdb.jobs['Job-3']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1_NLGEOM', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='GOODMAN_MODEL', nodalOutputPrecision=
+    SINGLE, numCpus=4, numDomains=4, numGPUs=0, numThreadsPerMpiProcess=1, 
+    queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine=''
+    , waitHours=0, waitMinutes=0)
+mdb.jobs['GOODMAN_MODEL'].submit(consistencyChecking=OFF)
+mdb.jobs['GOODMAN_MODEL']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_FATIGUE\\01_EXAMPLE_1\\GOODMAN_MODEL.odb', 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 25256, 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'GOODMAN_MODEL', 'memory': 231.0})
+mdb.jobs['GOODMAN_MODEL']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65210.0, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(MINIMUM_MEMORY, {'minimum_memory': 42.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THE STRAIN INCREMENT HAS EXCEEDED FIFTY TIMES THE STRAIN TO CAUSE FIRST YIELD AT 2880 POINTS', 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2714 negative eigenvalues.', 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THE STRAIN INCREMENT HAS EXCEEDED FIFTY TIMES THE STRAIN TO CAUSE FIRST YIELD AT 10 POINTS', 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THE STRAIN INCREMENT IS SO LARGE THAT THE PROGRAM WILL NOT ATTEMPT THE PLASTICITY CALCULATION AT 2 POINTS', 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'EXCESSIVE DISTORTION AT A TOTAL OF 2664 INTEGRATION POINTS IN SOLID (CONTINUUM) ELEMENTS', 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(STATUS, {'totalTime': 0.0, 
+    'attempts': ' 1U', 'timeIncrement': 1.0, 'increment': 1, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'GOODMAN_MODEL', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['GOODMAN_MODEL']._Message(STATUS, {'totalTime': 0.25, 'attempts': 2, 
+    'timeIncrement': 0.25, 'increment': 1, 'stepTime': 0.25, 'step': 1, 
+    'jobName': 'GOODMAN_MODEL', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['GOODMAN_MODEL']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THE STRAIN INCREMENT HAS EXCEEDED FIFTY TIMES THE STRAIN TO CAUSE FIRST YIELD AT 2232 POINTS', 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2277 negative eigenvalues.', 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THE STRAIN INCREMENT HAS EXCEEDED FIFTY TIMES THE STRAIN TO CAUSE FIRST YIELD AT 1968 POINTS', 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2291 negative eigenvalues.', 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THE STRAIN INCREMENT HAS EXCEEDED FIFTY TIMES THE STRAIN TO CAUSE FIRST YIELD AT 15 POINTS', 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THE STRAIN INCREMENT IS SO LARGE THAT THE PROGRAM WILL NOT ATTEMPT THE PLASTICITY CALCULATION AT 1 POINTS', 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'EXCESSIVE DISTORTION AT A TOTAL OF 572 INTEGRATION POINTS IN SOLID (CONTINUUM) ELEMENTS', 
+    'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(STATUS, {'totalTime': 0.25, 
+    'attempts': ' 1U', 'timeIncrement': 0.25, 'increment': 2, 'stepTime': 0.25, 
+    'step': 1, 'jobName': 'GOODMAN_MODEL', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['GOODMAN_MODEL']._Message(STATUS, {'totalTime': 0.3125, 'attempts': 2, 
+    'timeIncrement': 0.0625, 'increment': 2, 'stepTime': 0.3125, 'step': 1, 
+    'jobName': 'GOODMAN_MODEL', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['GOODMAN_MODEL']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(STATUS, {'totalTime': 0.3125, 
+    'attempts': ' 1U', 'timeIncrement': 0.09375, 'increment': 3, 
+    'stepTime': 0.3125, 'step': 1, 'jobName': 'GOODMAN_MODEL', 'severe': 0, 
+    'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['GOODMAN_MODEL']._Message(STATUS, {'totalTime': 0.3359375, 
+    'attempts': 2, 'timeIncrement': 0.0234375, 'increment': 3, 
+    'stepTime': 0.3359375, 'step': 1, 'jobName': 'GOODMAN_MODEL', 'severe': 0, 
+    'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['GOODMAN_MODEL']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(STATUS, {'totalTime': 0.37109375, 
+    'attempts': 1, 'timeIncrement': 0.03515625, 'increment': 4, 
+    'stepTime': 0.37109375, 'step': 1, 'jobName': 'GOODMAN_MODEL', 'severe': 0, 
+    'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['GOODMAN_MODEL']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(STATUS, {'totalTime': 0.423828125, 
+    'attempts': 1, 'timeIncrement': 0.052734375, 'increment': 5, 
+    'stepTime': 0.423828125, 'step': 1, 'jobName': 'GOODMAN_MODEL', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['GOODMAN_MODEL']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 5, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(STATUS, {'totalTime': 0.5029296875, 
+    'attempts': 1, 'timeIncrement': 0.0791015625, 'increment': 6, 
+    'stepTime': 0.5029296875, 'step': 1, 'jobName': 'GOODMAN_MODEL', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['GOODMAN_MODEL']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 6, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(STATUS, {'totalTime': 0.62158203125, 
+    'attempts': 1, 'timeIncrement': 0.11865234375, 'increment': 7, 
+    'stepTime': 0.62158203125, 'step': 1, 'jobName': 'GOODMAN_MODEL', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['GOODMAN_MODEL']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 7, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(STATUS, {'totalTime': 0.799560546875, 
+    'attempts': 1, 'timeIncrement': 0.177978515625, 'increment': 8, 
+    'stepTime': 0.799560546875, 'step': 1, 'jobName': 'GOODMAN_MODEL', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['GOODMAN_MODEL']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 8, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 9, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 0.200439453125, 'increment': 9, 'stepTime': 1.0, 
+    'step': 1, 'jobName': 'GOODMAN_MODEL', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['GOODMAN_MODEL']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'GOODMAN_MODEL'})
+mdb.jobs['GOODMAN_MODEL']._Message(JOB_COMPLETED, {
+    'time': 'Thu Sep 29 15:53:59 2022', 'jobName': 'GOODMAN_MODEL'})

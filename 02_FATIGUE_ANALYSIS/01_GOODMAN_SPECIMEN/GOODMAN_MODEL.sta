@@ -1,0 +1,19 @@
+ Abaqus/Standard 2022.HF2                  DATE 29-Sep-2022 TIME 15:53:39
+ SUMMARY OF JOB INFORMATION:
+ STEP  INC ATT SEVERE EQUIL TOTAL  TOTAL      STEP       INC OF       DOF    IF
+               DISCON ITERS ITERS  TIME/    TIME/LPF    TIME/LPF    MONITOR RIKS
+               ITERS               FREQ
+   1     1   1U    0     3     3  0.00       0.00       1.000     
+   1     1   2     0     2     2  0.250      0.250      0.2500    
+   1     2   1U    0     4     4  0.250      0.250      0.2500    
+   1     2   2     0     1     1  0.312      0.312      0.06250   
+   1     3   1U    0     4     4  0.312      0.312      0.09375   
+   1     3   2     0     2     2  0.336      0.336      0.02344   
+   1     4   1     0     4     4  0.371      0.371      0.03516   
+   1     5   1     0     3     3  0.424      0.424      0.05273   
+   1     6   1     0     2     2  0.503      0.503      0.07910   
+   1     7   1     0     2     2  0.622      0.622      0.1187    
+   1     8   1     0     3     3  0.800      0.800      0.1780    
+   1     9   1     0     2     2  1.00       1.00       0.2004    
+                          
+ THE ANALYSIS HAS COMPLETED SUCCESSFULLY

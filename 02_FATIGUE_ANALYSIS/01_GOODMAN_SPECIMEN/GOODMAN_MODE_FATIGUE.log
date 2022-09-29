@@ -1,0 +1,190 @@
+
+Reading LDF file C:\Users\jhseo\Documents\fe-safe.2022\projects\project_03\jobs\job_01\current.ldf
+# .ldf file created by fe-safe 2022 Hot Fix 2[mswin]
+INIT
+transitions=Yes
+END
+# Block number 1
+BLOCK
+lh=./results/yeqmxc_[sgn_[sin[1_x+0]].dac]_created[14.20.24_29-09-22].dac, signum=1, ds=19
+END
+End of LDF read
+No errors or warnings to clear.
+Checked out 7 licenses of feature safe_ex_engine
+Starting Analysis ...
+ 
+ 
+FATIGUE LIFE : fe-safe 2022 Hot Fix 2[mswin] 15:58:31 Thu 29 September9 2022 
+ 
+Buildstamp: 2022-FD02 2209.6 
+Copyright 2022 Dassault Systemes 
+
+
+Physical memory free: 49.99 GiB (78.50%)
+
+Algorithm                 NormalStress:-Goodman[SN] 
+Material                  AL2014-T6-system.dbase 
+Surface                   User defined Kt 
+Kt                        1 
+UTS                       510 MPa 
+Residuals                  
+Subgroup                  Whole 
+SN Scale                  1 
+Knock-Down                Off 
+Model File (s)            D:\00_FATIGUE\01_EXAMPLE_1\GOODMAN_MODEL.odb 
+FEA Units                 S=MPa e=strain T=degC 
+Loading                   Loading is equivalent to 1 Repeats 
+                          Load Definition File : GOODMAN_MODE_FATIGUE.ldf 
+                         	Elastic FEA 
+Scale factor              1 
+Overflow Life value       0.00E+00 
+Infinite Life value       Material CAEL 
+Temperature analysis      Enabled if temperatures present 
+Histories                 None 
+Log                       None 
+List of Items             None 
+Histories for Items       None 
+Log for Items             None 
+Output contours to        C:\Users\jhseo\Documents\fe-safe.2022\projects\project_03\jobs\job_01\fe-results\GOODMAN_MODE_FATIGUE.odb 
+Contour variables         LOGLife-Repeats 
+...Intermediate.          C:\Users\jhseo\Documents\fe-safe.2022\projects\project_03\jobs\job_01\fe-results\fesafe.fer 
+Influence coeffs.         Disabled 
+Gauges.                   Disabled 
+Solvers                   Embedded Analysis Server 
+
+
+Tensor datasets:
+D'set  Step   Inc   T/Freq  Type         Pos    Number      What  Direct
+    1     1     0      0.0     S   Elemental     11880  elements  0*e-6 -> 0*e-6
+    2     1     0      0.0     E   Elemental     11880  elements  0*e-6 -> 0*e-6
+    3     1     1      0.3     S   Elemental     11880  elements  252 -> -37
+    4     1     1      0.3     E   Elemental     11880  elements  0*e-6 -> 0*e-6
+    5     1     2      0.3     S   Elemental     11880  elements  315 -> -46
+    6     1     2      0.3     E   Elemental     11880  elements  0*e-6 -> 0*e-6
+    7     1     3      0.3     S   Elemental     11880  elements  338 -> -49
+    8     1     3      0.3     E   Elemental     11880  elements  600*e-6 -> -317*e-6
+    9     1     4      0.4     S   Elemental     11880  elements  351 -> -49
+   10     1     4      0.4     E   Elemental     11880  elements  5019*e-6 -> -2884*e-6
+   11     1     5      0.4     S   Elemental     11880  elements  358 -> -50
+   12     1     5      0.4     E   Elemental     11880  elements  10875*e-6 -> -6385*e-6
+   13     1     6      0.5     S   Elemental     11880  elements  364 -> -50
+   14     1     6      0.5     E   Elemental     11880  elements  18673*e-6 -> -11076*e-6
+   15     1     7      0.6     S   Elemental     11880  elements  371 -> -74
+   16     1     7      0.6     E   Elemental     11880  elements  29375*e-6 -> -17471*e-6
+   17     1     8      0.8     S   Elemental     11880  elements  378 -> -73
+   18     1     8      0.8     E   Elemental     11880  elements  43403*e-6 -> -25707*e-6
+   19     1     9      1.0     S   Elemental     11880  elements  385 -> -99
+   20     1     9      1.0     E   Elemental     11880  elements  57613*e-6 -> -33918*e-6
+
+D'set                      Shear  File                 Description
+    1             0*e-6 -> 0*e-6  Job-3.odb           
+    2             0*e-6 -> 0*e-6  Job-3.odb           (PE)
+    3                  54 -> -54  Job-3.odb           
+    4             0*e-6 -> 0*e-6  Job-3.odb           (PE)
+    5                  67 -> -67  Job-3.odb           
+    6             0*e-6 -> 0*e-6  Job-3.odb           (PE)
+    7                  72 -> -72  Job-3.odb           
+    8          46*e-6 -> -46*e-6  Job-3.odb           (PE)
+    9                  72 -> -72  Job-3.odb           
+   10        784*e-6 -> -784*e-6  Job-3.odb           (PE)
+   11                  73 -> -73  Job-3.odb           
+   12      1971*e-6 -> -1971*e-6  Job-3.odb           (PE)
+   13                  74 -> -74  Job-3.odb           
+   14      3605*e-6 -> -3605*e-6  Job-3.odb           (PE)
+   15                  74 -> -74  Job-3.odb           
+   16      5760*e-6 -> -5760*e-6  Job-3.odb           (PE)
+   17                  75 -> -75  Job-3.odb           
+   18      8292*e-6 -> -8292*e-6  Job-3.odb           (PE)
+   19                  76 -> -76  Job-3.odb           
+   20    10607*e-6 -> -10607*e-6  Job-3.odb           (PE)
+
+
+Optimal size is 60 (8192).
+Finished evaluating dataset types.
+Datasets main ID is elemental.
+Preparing contour definitions.
+Initialising loading blocks...
+Processing geometry requirements...
+Mesh has 11880 elements, 15984 nodes, using 1744012 bytes.
+    Group name      	  # Ids     	# On Surface	In Other Grp	  # In FED  	   # Used   	  # Items   
+--------------------	------------	------------	------------	------------	------------	------------
+SET-1               	         144	          NA	           0	144         	144         	1152        
+SET-2               	         216	          NA	         144	72          	72          	576         
+SET-3               	        1080	          NA	           0	1080        	1080        	8640        
+SPECIMEN-1_SET-1    	       11880	          NA	        1296	10584       	10584       	84672       
+AL2014_T6           	       11880	          NA	       11880	0           	0           	0           
+Section-ASSEMBLY_SPECIMEN-1_SET-1	       11880	          NA	       11880	0           	0           	0           
+Default             	       11880	          NA	       11880	0           	0           	0           
+Analysis group processing took 0.014s.
+Saving analysis definition...
+Checking plug-in status...
+
+   %       Time     Life-Repeats
+Analysis validation passed (0.032 seconds).
+Enforced DMP check is ON
+Starting streaming of analysis settings...
+Starting of analysis settings reconstruction from stream...
+Enforced DMP check PASSED
+Using 1 analysis server:
+	Embedded analysis server.
+Starting analysis...
+(Day 0: 00:02:21)  Analysis FEA Analysis (2022-FD02 2209.6) accepted, assigned ID 86400 (-1144384000).
+System CPU core count is detected as 16 core(s).
+Simultaneous nodes to be analysed: Ideal of 16 core(s).
+Running embedded solvers.
+Threads to be used: Ideal of 16 core(s).
+Each solver will be limited to 1 core(s).
+Critical plane threading limit: Ideal of 1 core(s).
+(Day 0: 00:02:21)  All static data for analysis 86400 (FEA Analysis) has been retrieved, commencing analysis.
+0 sleep calls were made.
+(Day 0: 00:02:25)  Cleaning up analysis 86400: 0 data chunks were removed, the analysis solver has terminated.
+ 100    0:00:03  11249@[0]2883.1 95040 of 95040
+  
+Summary 
+======= 
+          Worst Life-Repeats                     : 11248.636 
+  at Element [0]2883.1 
+Analysis time                                    : 0:00:03.509 
+ 
+Fatigue Analysis Completed (15:58:34 Thu 29 Sep 2022).
+Mesh has 11880 elements, 15984 nodes, using 3041724 bytes.
+Checked in 7 licenses of feature safe_ex_engine
+Results exported by default (General FE Options)...
+No errors or warnings to clear.
+Making copy of ODB D:\00_FATIGUE\01_EXAMPLE_1\GOODMAN_MODEL.odb ....
+
+ odb_io 
+ Writes Abaqus 6 ODB databases 
+
+Copyright 2022 Dassault Systemes
+
+
+Found 5 ODB library interfaces in C:\SIMULIA\EstProducts\2022\win_b64\code\bin.
+Results File : C:\Users\jhseo\Documents\fe-safe.2022\projects\project_03\jobs\job_01\fe-results\fesafe.fer
+  contains   : LOGLife-Repeats 
+ODB Database : C:\Users\jhseo\Documents\fe-safe.2022\projects\project_03\jobs\job_01\fe-results\GOODMAN_MODE_FATIGUE.odb
+Data at      : Element Nodal
+
+Max write    : 100000 (All keyword ODB_WRITEMAXBUFF)
+
+Path is C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\intel64\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\ia32\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\intel64_win\compiler;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\ia32_win\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\intel64\libfabric\bin\;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\intel64\libfabric\bin\utils;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\intel64\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\ia32;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\intel64;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\;C:\Python\Python38\Scripts\;C:\Python\Python38\;C:\Python\Python37\Scripts\;C:\Python\Python37\;C:\SIMULIA\Commands;C:\Program Files\Microsoft MPI\Bin\;C:\MSC.Software\Patran_x64\20190\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\MATLAB\R2019B\runtime\win64;C:\Program Files\MATLAB\R2019B\bin;C:\Program Files (x86)\Wolfram Research\WolframScript\;C:\Program Files\TortoiseSVN\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X64\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X86\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Siemens\NX1953\CAPITALINTEGRATION\capitalnxremote\;C:\Program Files\PuTTY\;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files (x86)\Intel\oneAPI\compiler\2022.1.0\env;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build;C:\Users\jhseo\AppData\Local\Microsoft\WindowsApps;C:\Dakota\bin;C:\Dakota\lib;C:\Python36;C:\Users\jhseo\AppData\Local\GitHubDesktop\bin;C:\Users\jhseo\AppData\Local\Programs\Git\cmd;C:\Program Files (x86)\Intel\oneAPI\compiler\2022.1.0\env;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build;
+Temporary ODB execution directory is C:\Users\jhseo\AppData\Local\Temp\odb_2055500677808_1.
+Found 5 ODB library interfaces in C:\Users\jhseo\AppData\Local\Temp\odb_2055500677808_1.
+Trying ODB interface version 2022
+Loading dynamic library C:/Users/jhseo/AppData/Local/Temp/odb_2055500677808_1/SMAFsfODB_Latest.dll
+PATH is now set to PATH=C:\Users\jhseo\AppData\Local\Temp\odb_2055500677808_1;C:\Users\jhseo\AppData\Local\Temp\odb_2055500677808_1;C:/SIMULIA/EstProducts/2022/win_b64/code/bin;C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\intel64\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\ia32\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\intel64_win\compiler;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\ia32_win\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\intel64\libfabric\bin\;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\intel64\libfabric\bin\utils;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\intel64\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\ia32;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\intel64;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\;C:\Python\Python38\Scripts\;C:\Python\Python38\;C:\Python\Python37\Scripts\;C:\Python\Python37\;C:\SIMULIA\Commands;C:\Program Files\Microsoft MPI\Bin\;C:\MSC.Software\Patran_x64\20190\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\MATLAB\R2019B\runtime\win64;C:\Program Files\MATLAB\R2019B\bin;C:\Program Files (x86)\Wolfram Research\WolframScript\;C:\Program Files\TortoiseSVN\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X64\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X86\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Siemens\NX1953\CAPITALINTEGRATION\capitalnxremote\;C:\Program Files\PuTTY\;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files (x86)\Intel\oneAPI\compiler\2022.1.0\env;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build;C:\Users\jhseo\AppData\Local\Microsoft\WindowsApps;C:\Dakota\bin;C:\Dakota\lib;C:\Python36;C:\Users\jhseo\AppData\Local\GitHubDesktop\bin;C:\Users\jhseo\AppData\Local\Programs\Git\cmd;C:\Program Files (x86)\Intel\oneAPI\compiler\2022.1.0\env;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build;
+Version supported: 2022
+Saved ODB current state.
+Found 5 ODB library interfaces in C:\Users\jhseo\AppData\Local\Temp\odb_2055500677808_1.
+Loading dynamic library C:/Users/jhseo/AppData/Local/Temp/odb_2055500677808_1/SMAFsfODB_Latest.dll
+PATH is now set to PATH=C:\Users\jhseo\AppData\Local\Temp\odb_2055500677808_1;C:\Users\jhseo\AppData\Local\Temp\odb_2055500677808_1;C:/SIMULIA/EstProducts/2022/win_b64/code/bin;C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\intel64\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\ia32\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\intel64_win\compiler;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\ia32_win\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\intel64\libfabric\bin\;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\intel64\libfabric\bin\utils;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\intel64\bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\ia32;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\intel64;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\;C:\Python\Python38\Scripts\;C:\Python\Python38\;C:\Python\Python37\Scripts\;C:\Python\Python37\;C:\SIMULIA\Commands;C:\Program Files\Microsoft MPI\Bin\;C:\MSC.Software\Patran_x64\20190\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\MATLAB\R2019B\runtime\win64;C:\Program Files\MATLAB\R2019B\bin;C:\Program Files (x86)\Wolfram Research\WolframScript\;C:\Program Files\TortoiseSVN\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X64\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X86\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Siemens\NX1953\CAPITALINTEGRATION\capitalnxremote\;C:\Program Files\PuTTY\;C:\Program Files\Wolfram Research\WolframScript\;C:\Program Files (x86)\Intel\oneAPI\compiler\2022.1.0\env;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build;C:\Users\jhseo\AppData\Local\Microsoft\WindowsApps;C:\Dakota\bin;C:\Dakota\lib;C:\Python36;C:\Users\jhseo\AppData\Local\GitHubDesktop\bin;C:\Users\jhseo\AppData\Local\Programs\Git\cmd;C:\Program Files (x86)\Intel\oneAPI\compiler\2022.1.0\env;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build;
+Getting step name.
+Creating step 'fe-safe_01' (fe-safe 2022 Hot Fix 2[mswin];GOODMAN_MODE_FATIGUE.ldf;GOODMAN_MODEL.odb;), frame ...
+Saved ODB current state.
+Received contour data for LOGLife-Repeats
+Finished writing contour LOGLife-Repeats.
+Written 1 of 1 contour(s).
+Saved ODB current state.
+
+odb_io completed
+Mesh has 11880 elements, 15984 nodes, using 2409284 bytes.
