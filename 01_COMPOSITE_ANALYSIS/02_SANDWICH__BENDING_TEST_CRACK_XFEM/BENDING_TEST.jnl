@@ -1,0 +1,1663 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(300.0, 100.0))
+mdb.models['Model-1'].sketches['__profile__'].FixedConstraint(entity=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    -47.8330154418945, 47.1831321716309), value=50.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Part-1', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-1'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=15.2, name='__profile__', 
+    sheetSize=608.27, transform=
+    mdb.models['Model-1'].parts['Part-1'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['Part-1'].faces[0], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(150.0, 25.0, 0.0)))
+mdb.models['Model-1'].parts['Part-1'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-155.8, 15.2), 
+    point2=(155.8, 15.2))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-155.8, 7.6), 
+    point2=(155.8, 7.6))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-155.8, -7.6), 
+    point2=(152.0, -7.6))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-155.8, -19.0), 
+    point2=(152.478546142578, -19.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    -177.886871337891, 21.8824081420898), value=2.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    -178.520538330078, 11.7358474731445), value=0.001, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[6])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    -173.768005371094, -24.0942001342773), value=2.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[10], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    -181.3720703125, -15.2159652709961), value=0.001, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[8], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[10])
+mdb.models['Model-1'].parts['Part-1'].PartitionFaceBySketch(faces=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ), sketch=mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 5.0), point1=(10.0, 5.0))
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], radius=5.0, 
+    textPoint=(-19.7653198242188, 13.4973373413086))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-10.0, 5.0), point2=
+    (10.0, 5.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], point1=(
+    -7.11551666259766, 5.02659606933594))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], point1=(
+    -3.86005401611328, 2.51329803466797))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], point1=(
+    6.74346160888672, 4.56117248535156))
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Part-2', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-2'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].Material(name='STEEL_PIN')
+mdb.models['Model-1'].materials['STEEL_PIN'].Elastic(table=((200000.0, 0.3), ))
+mdb.models['Model-1'].Material(name='COMPOSITE_SKIN')
+mdb.models['Model-1'].materials['COMPOSITE_SKIN'].Elastic(table=((34600.0, 
+    4600.0, 4600.0, 0.34, 0.34, 0.4, 1700.0, 1700.0, 1450.0), ), type=
+    ENGINEERING_CONSTANTS)
+mdb.models['Model-1'].Material(name='CORE')
+mdb.models['Model-1'].materials['CORE'].Elastic(table=((3000.0, 0.4), ))
+mdb.models['Model-1'].materials['CORE'].MaxpsDamageInitiation(table=((20.0, ), 
+    ))
+mdb.models['Model-1'].materials['CORE'].maxpsDamageInitiation.DamageEvolution(
+    table=((1.0, ), ), type=DISPLACEMENT)
+mdb.models['Model-1'].materials['CORE'].maxpsDamageInitiation.DamageStabilizationCohesive(
+    cohesiveCoeff=0.0001)
+mdb.models['Model-1'].HomogeneousSolidSection(material='STEEL_PIN', name=
+    'Section-1', thickness=None)
+mdb.models['Model-1'].HomogeneousSolidSection(material='COMPOSITE_SKIN', name=
+    'Section-2', thickness=None)
+mdb.models['Model-1'].HomogeneousSolidSection(material='CORE', name='Section-3'
+    , thickness=None)
+mdb.models['Model-1'].sections.changeKey(fromName='Section-1', toName=
+    'STEEL_PIN')
+mdb.models['Model-1'].sections.changeKey(fromName='Section-2', toName=
+    'COMPOSITE_SKIN')
+mdb.models['Model-1'].sections.changeKey(fromName='Section-3', toName='CORE')
+mdb.models['Model-1'].parts['Part-2'].Set(faces=
+    mdb.models['Model-1'].parts['Part-2'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ), name='Set-1')
+mdb.models['Model-1'].parts['Part-2'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-2'].sets['Set-1'], sectionName=
+    'STEEL_PIN', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(faces=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#4 ]', 
+    ), ), name='Set-1')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-1'], sectionName='CORE', 
+    thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(faces=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#9 ]', 
+    ), ), name='Set-2')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-2'], sectionName=
+    'COMPOSITE_SKIN', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].Material(name='COHESIVE')
+mdb.models['Model-1'].materials['COHESIVE'].Elastic(table=((34600.0, 34600.0, 
+    34600.0), ), type=TRACTION)
+mdb.models['Model-1'].materials['COHESIVE'].QuadsDamageInitiation(table=((20.0, 
+    20.0, 20.0), ))
+mdb.models['Model-1'].materials['COHESIVE'].quadsDamageInitiation.DamageEvolution(
+    table=((0.1, ), ), type=DISPLACEMENT)
+mdb.models['Model-1'].materials['COHESIVE'].quadsDamageInitiation.DamageStabilizationCohesive(
+    cohesiveCoeff=0.0001)
+mdb.models['Model-1'].HomogeneousSolidSection(material='COHESIVE', name=
+    'COHESIVE', thickness=None)
+mdb.models['Model-1'].parts['Part-1'].Set(faces=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#12 ]', 
+    ), ), name='Set-3')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-3'], sectionName='COHESIVE'
+    , thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Part-1-1', 
+    part=mdb.models['Model-1'].parts['Part-1'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Part-2-1', 
+    part=mdb.models['Model-1'].parts['Part-2'])
+mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].translate(vector=(
+    306.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Part-2-2', 
+    part=mdb.models['Model-1'].parts['Part-2'])
+mdb.models['Model-1'].rootAssembly.instances['Part-2-2'].translate(vector=(
+    317.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Part-2-3', 
+    part=mdb.models['Model-1'].parts['Part-2'])
+mdb.models['Model-1'].rootAssembly.instances['Part-2-3'].translate(vector=(
+    328.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-2-1', ), 
+    vector=(-156.0, -5.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-2-1', ), 
+    vector=(-150.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(50.0, 0.0, 
+    0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-2-1', ), 
+    vector=(50.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(150.0, 0.0, 
+    0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(200.0, 0.0, 
+    0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(250.0, 0.0, 
+    0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-2-2', ), 
+    vector=(-67.0, -5.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-2-1', ), 
+    vector=(0.0, -5.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-2-1', ), 
+    vector=(0.0, -1.01, 0.0))
+# Save by jhseo on 2022_09_30-12.20.55; build 2022.HF2 2022_03_21-08.37.34 176360
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-2-2', ), 
+    vector=(0.0, -5.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-2-2', ), 
+    vector=(0.0, -1.01, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-2-3', ), 
+    vector=(-178.0, 45.0, 0.0))
+mdb.models['Model-1'].rootAssembly.rotate(angle=180.0, axisDirection=(0.0, 0.0, 
+    1.0), axisPoint=(150.0, 50.0, 0.0), instanceList=('Part-2-3', ))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-2-3', ), 
+    vector=(0.0, 5.0, 0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(50.0, -0.01, 
+    0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-2-1', ), 
+    vector=(0.0, 1.0, 0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(250.0, -0.01, 
+    0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-2-2', ), 
+    vector=(0.0, 1.0, 0.0))
+# Save by jhseo on 2022_09_30-12.26.29; build 2022.HF2 2022_03_21-08.37.34 176360
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].StaticStep(adaptiveDampingRatio=0.05, 
+    continueDampingFactors=False, initialInc=0.001, maxNumInc=10000, minInc=
+    1e-10, name='Step-1', previous='Initial', stabilizationMagnitude=0.0002, 
+    stabilizationMethod=DISSIPATED_ENERGY_FRACTION)
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(numIntervals=
+    200, variables=('S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 
+    'CSTRESS', 'CDISP', 'PHILSM', 'PSILSM', 'EVOL', 'STATUSXFEM'))
+mdb.models['Model-1'].historyOutputRequests['H-Output-1'].setValues(
+    numIntervals=100)
+# Save by jhseo on 2022_09_30-12.29.19; build 2022.HF2 2022_03_21-08.37.34 176360
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].steps['Step-1'].control.setValues(allowPropagation=OFF, 
+    lineSearch=(10.0, 1.0, 0.0001, 0.25, 0.1), resetDefaultValues=OFF, 
+    timeIncrementation=(20.0, 40.0, 9.0, 16.0, 10.0, 4.0, 12.0, 20.0, 6.0, 3.0, 
+    50.0))
+mdb.models['Model-1'].ContactProperty('IntProp-1')
+mdb.models['Model-1'].interactionProperties['IntProp-1'].TangentialBehavior(
+    dependencies=0, directionality=ISOTROPIC, elasticSlipStiffness=None, 
+    formulation=PENALTY, fraction=0.005, maximumElasticSlip=FRACTION, 
+    pressureDependency=OFF, shearStressLimit=None, slipRateDependency=OFF, 
+    table=((0.2, ), ), temperatureDependency=OFF)
+mdb.models['Model-1'].interactionProperties['IntProp-1'].NormalBehavior(
+    allowSeparation=ON, constraintEnforcementMethod=DEFAULT, 
+    pressureOverclosure=HARD)
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-1', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='s_Surf-1', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='Step-1', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='IntProp-1', main=
+    mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-1'], name='Int-1', 
+    secondary=mdb.models['Model-1'].rootAssembly.surfaces['s_Surf-1'], sliding=
+    FINITE, thickness=ON)
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-3', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-2'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='s_Surf-3', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='Step-1', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='IntProp-1', main=
+    mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-3'], name='Int-2', 
+    secondary=mdb.models['Model-1'].rootAssembly.surfaces['s_Surf-3'], sliding=
+    FINITE, thickness=ON)
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-5', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-3'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='s_Surf-5', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].edges.getSequenceFromMask(
+    ('[#1000 ]', ), ))
+mdb.models['Model-1'].SurfaceToSurfaceContactStd(adjustMethod=NONE, 
+    clearanceRegion=None, createStepName='Step-1', datumAxis=None, 
+    initialClearance=OMIT, interactionProperty='IntProp-1', main=
+    mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-5'], name='Int-3', 
+    secondary=mdb.models['Model-1'].rootAssembly.surfaces['s_Surf-5'], sliding=
+    FINITE, thickness=ON)
+mdb.models['Model-1'].rootAssembly.engineeringFeatures.XFEMCrack(crackDomain=
+    Region(
+    faces=mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].faces.getSequenceFromMask(
+    mask=('[#4 ]', ), )), interactionProperty='IntProp-1', name='Crack-1')
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].edges.getSequenceFromMask(
+    mask=('[#1 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-2'].edges.getSequenceFromMask(
+    mask=('[#1 ]', ), ), name='Set-2')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-1', region=mdb.models['Model-1'].rootAssembly.sets['Set-2'], u1=0.0, 
+    u2=0.0, ur3=0.0)
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-3'].edges.getSequenceFromMask(
+    ('[#1 ]', ), ), name='Set-3')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'LOAD', region=mdb.models['Model-1'].rootAssembly.sets['Set-3'], u1=0.0, 
+    u2=-50.0, ur3=0.0)
+mdb.models['Model-1'].parts['Part-2'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.5)
+mdb.models['Model-1'].parts['Part-2'].setMeshControls(algorithm=MEDIAL_AXIS, 
+    regions=mdb.models['Model-1'].parts['Part-2'].faces.getSequenceFromMask((
+    '[#1 ]', ), ))
+mdb.models['Model-1'].parts['Part-2'].generateMesh()
+mdb.models['Model-1'].parts['Part-1'].setMeshControls(elemShape=QUAD, regions=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#1f ]', 
+    ), ), technique=SWEEP)
+mdb.models['Model-1'].parts['Part-1'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.5)
+mdb.models['Model-1'].parts['Part-1'].generateMesh()
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=CPE4R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    hourglassControl=ENHANCED, distortionControl=DEFAULT), ElemType(
+    elemCode=CPE3, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#d ]', 
+    ), ), ))
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=COH2D4, elemLibrary=STANDARD, elemDeletion=ON, 
+    maxDegradation=0.999), ElemType(elemCode=UNKNOWN_TRI, 
+    elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#12 ]', 
+    ), ), ))
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(variables=(
+    'S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'CSTRESS', 'CDISP', 
+    'SDEG', 'PHILSM', 'PSILSM', 'EVOL', 'STATUS', 'STATUSXFEM'))
+# Save by jhseo on 2022_09_30-12.40.38; build 2022.HF2 2022_03_21-08.37.34 176360
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='SANDWICH_TEST', nodalOutputPrecision=
+    SINGLE, numCpus=6, numDomains=6, numGPUs=1, numThreadsPerMpiProcess=1, 
+    queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine=''
+    , waitHours=0, waitMinutes=0)
+mdb.jobs['SANDWICH_TEST'].submit(consistencyChecking=OFF)
+mdb.jobs['SANDWICH_TEST']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE PARAMETER HOURGLASS = ENHANCED ON THE SECTION CONTROLS OPTION IS RELEVANT FOR THESE ELEMENTS: C3D8R, CAX4R, CGAX4R, CPEG4R, CPE4R, CPS4R, M3D4R, S4R, SC8R AND THEIR HYBRID, THERMAL AND PRESSURE COUNTERPARTS WHEREVER APPLICABLE. IT IS ALSO RELEVANT FOR ALL TYPES OF MODIFIED TRIANGULAR AND TETRAHEDRAL ELEMENTS. THIS WARNING CAN BE IGNORED IF THE FEATURE IS APPLIED TO THESE ELEMENT TYPES ONLY.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '1200 elements have missing property definitions. The elements have been identified in element set ErrElemMissingSection.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '1200 elements have incorrect property definitions. The elements have been identified in element set WarnElemIncorrectProperty.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'Anisotropic material properties without a local orientation system have been defined for 4800 elements. Anisotropic material properties must be defined in a local orientation system. The elements are identified in element set ErrElemAnisotropicMaterial.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST EVOL IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST STATUS IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST STATUSXFEM IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PE IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEMAG IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST S IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST SDEG IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST E IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_COMPOSITE\\06_XFEM_DELAMINATION\\SANDWICH_TEST.odb', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  SANDWICH_TEST.dat file for possible error messages if the file exists.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  SANDWICH_TEST.dat file for possible error messages if the file exists.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.models['Model-1'].parts['Part-1'].MaterialOrientation(
+    additionalRotationField='', additionalRotationType=ROTATION_ANGLE, angle=
+    0.0, axis=AXIS_3, fieldName='', localCsys=None, orientationType=SYSTEM, 
+    region=mdb.models['Model-1'].parts['Part-1'].sets['Set-2'], stackDirection=
+    STACK_3)
+mdb.jobs['SANDWICH_TEST'].submit(consistencyChecking=OFF)
+mdb.jobs['SANDWICH_TEST']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE PARAMETER HOURGLASS = ENHANCED ON THE SECTION CONTROLS OPTION IS RELEVANT FOR THESE ELEMENTS: C3D8R, CAX4R, CGAX4R, CPEG4R, CPE4R, CPS4R, M3D4R, S4R, SC8R AND THEIR HYBRID, THERMAL AND PRESSURE COUNTERPARTS WHEREVER APPLICABLE. IT IS ALSO RELEVANT FOR ALL TYPES OF MODIFIED TRIANGULAR AND TETRAHEDRAL ELEMENTS. THIS WARNING CAN BE IGNORED IF THE FEATURE IS APPLIED TO THESE ELEMENT TYPES ONLY.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '1200 elements have missing property definitions. The elements have been identified in element set ErrElemMissingSection.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '1200 elements have incorrect property definitions. The elements have been identified in element set WarnElemIncorrectProperty.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST EVOL IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST STATUS IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST STATUSXFEM IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PE IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEMAG IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST S IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST SDEG IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST E IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_COMPOSITE\\06_XFEM_DELAMINATION\\SANDWICH_TEST.odb', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  SANDWICH_TEST.dat file for possible error messages if the file exists.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  SANDWICH_TEST.dat file for possible error messages if the file exists.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.models['Model-1'].XFEMCrackGrowth(crackName='Crack-1', createStepName=
+    'Initial', name='Int-4')
+# Save by jhseo on 2022_09_30-12.47.34; build 2022.HF2 2022_03_21-08.37.34 176360
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['SANDWICH_TEST'].submit(consistencyChecking=OFF)
+mdb.jobs['SANDWICH_TEST']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE PARAMETER HOURGLASS = ENHANCED ON THE SECTION CONTROLS OPTION IS RELEVANT FOR THESE ELEMENTS: C3D8R, CAX4R, CGAX4R, CPEG4R, CPE4R, CPS4R, M3D4R, S4R, SC8R AND THEIR HYBRID, THERMAL AND PRESSURE COUNTERPARTS WHEREVER APPLICABLE. IT IS ALSO RELEVANT FOR ALL TYPES OF MODIFIED TRIANGULAR AND TETRAHEDRAL ELEMENTS. THIS WARNING CAN BE IGNORED IF THE FEATURE IS APPLIED TO THESE ELEMENT TYPES ONLY.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '1200 elements have missing property definitions. The elements have been identified in element set ErrElemMissingSection.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '1200 elements have incorrect property definitions. The elements have been identified in element set WarnElemIncorrectProperty.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST EVOL IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST STATUS IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST STATUSXFEM IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PE IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEMAG IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST S IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST SDEG IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST E IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_COMPOSITE\\06_XFEM_DELAMINATION\\SANDWICH_TEST.odb', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  SANDWICH_TEST.dat file for possible error messages if the file exists.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  SANDWICH_TEST.dat file for possible error messages if the file exists.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.models['Model-1'].parts['Part-1'].Set(faces=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#10 ]', 
+    ), ), name='Set-7')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-7'], sectionName='COHESIVE'
+    , thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(faces=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#2 ]', 
+    ), ), name='Set-8')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-8'], sectionName='COHESIVE'
+    , thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.jobs['SANDWICH_TEST'].submit(consistencyChecking=OFF)
+mdb.jobs['SANDWICH_TEST']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE PARAMETER HOURGLASS = ENHANCED ON THE SECTION CONTROLS OPTION IS RELEVANT FOR THESE ELEMENTS: C3D8R, CAX4R, CGAX4R, CPEG4R, CPE4R, CPS4R, M3D4R, S4R, SC8R AND THEIR HYBRID, THERMAL AND PRESSURE COUNTERPARTS WHEREVER APPLICABLE. IT IS ALSO RELEVANT FOR ALL TYPES OF MODIFIED TRIANGULAR AND TETRAHEDRAL ELEMENTS. THIS WARNING CAN BE IGNORED IF THE FEATURE IS APPLIED TO THESE ELEMENT TYPES ONLY.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '1200 elements have missing property definitions. The elements have been identified in element set ErrElemMissingSection.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '1200 elements have incorrect property definitions. The elements have been identified in element set WarnElemIncorrectProperty.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST EVOL IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST STATUS IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST STATUSXFEM IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PE IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEEQ IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST PEMAG IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST S IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST SDEG IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST E IS NOT AVAILABLE FOR ELEMENT TYPE COH2D4', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_COMPOSITE\\06_XFEM_DELAMINATION\\SANDWICH_TEST.odb', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  SANDWICH_TEST.dat file for possible error messages if the file exists.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  SANDWICH_TEST.dat file for possible error messages if the file exists.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.models['Model-1'].materials['COHESIVE'].quadsDamageInitiation.damageEvolution.setValues(
+    type=DISPLACEMENT)
+mdb.models['Model-1'].materials['COHESIVE'].quadsDamageInitiation.damageStabilizationCohesive.setValues(
+    cohesiveCoeff=0.0001)
+del mdb.models['Model-1'].sections['COHESIVE']
+mdb.models['Model-1'].CohesiveSection(material='COHESIVE', name='COHESIVE', 
+    outOfPlaneThickness=None, response=TRACTION_SEPARATION)
+mdb.models['Model-1'].parts['Part-1'].Set(faces=
+    mdb.models['Model-1'].parts['Part-1'].faces.getSequenceFromMask(('[#12 ]', 
+    ), ), name='Set-9')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-9'], sectionName='COHESIVE'
+    , thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.jobs['SANDWICH_TEST'].submit(consistencyChecking=OFF)
+mdb.jobs['SANDWICH_TEST']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE PARAMETER HOURGLASS = ENHANCED ON THE SECTION CONTROLS OPTION IS RELEVANT FOR THESE ELEMENTS: C3D8R, CAX4R, CGAX4R, CPEG4R, CPE4R, CPS4R, M3D4R, S4R, SC8R AND THEIR HYBRID, THERMAL AND PRESSURE COUNTERPARTS WHEREVER APPLICABLE. IT IS ALSO RELEVANT FOR ALL TYPES OF MODIFIED TRIANGULAR AND TETRAHEDRAL ELEMENTS. THIS WARNING CAN BE IGNORED IF THE FEATURE IS APPLIED TO THESE ELEMENT TYPES ONLY.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_COMPOSITE\\06_XFEM_DELAMINATION\\SANDWICH_TEST.odb', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 17360, 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THERE ARE 4 UNCONNECTED REGIONS IN THE MODEL.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'SANDWICH_TEST', 'memory': 257.0})
+mdb.jobs['SANDWICH_TEST']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65210.0, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(MINIMUM_MEMORY, {'minimum_memory': 90.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0, 
+    'attempts': ' 1U', 'timeIncrement': 0.001, 'increment': 1, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 2, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'There is zero FORCE everywhere in the model based on the default criterion. please check the value of the average FORCE during the current iteration to verify that the FORCE is small enough to be treated as zero. if not, please use the solution controls to reset the criterion for zero FORCE.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.00025, 
+    'attempts': 2, 'timeIncrement': 0.00025, 'increment': 1, 
+    'stepTime': 0.00025, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 1, 
+    'iterations': 5, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0005, 'attempts': 1, 
+    'timeIncrement': 0.00025, 'increment': 2, 'stepTime': 0.0005, 'step': 1, 
+    'jobName': 'SANDWICH_TEST', 'severe': 1, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.000875, 
+    'attempts': 1, 'timeIncrement': 0.000375, 'increment': 3, 
+    'stepTime': 0.000875, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 1, 
+    'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0014375, 
+    'attempts': 1, 'timeIncrement': 0.0005625, 'increment': 4, 
+    'stepTime': 0.0014375, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 
+    'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.00228125, 
+    'attempts': 1, 'timeIncrement': 0.00084375, 'increment': 5, 
+    'stepTime': 0.00228125, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.003546875, 
+    'attempts': 1, 'timeIncrement': 0.001265625, 'increment': 6, 
+    'stepTime': 0.003546875, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.005, 'attempts': 1, 
+    'timeIncrement': 0.001453125, 'increment': 7, 'stepTime': 0.005, 'step': 1, 
+    'jobName': 'SANDWICH_TEST', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0071796875, 
+    'attempts': 1, 'timeIncrement': 0.0021796875, 'increment': 8, 
+    'stepTime': 0.0071796875, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.01, 'attempts': 1, 
+    'timeIncrement': 0.0028203125, 'increment': 9, 'stepTime': 0.01, 'step': 1, 
+    'jobName': 'SANDWICH_TEST', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.015, 'attempts': 1, 
+    'timeIncrement': 0.005, 'increment': 10, 'stepTime': 0.015, 'step': 1, 
+    'jobName': 'SANDWICH_TEST', 'severe': 1, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.02, 'attempts': 1, 
+    'timeIncrement': 0.005, 'increment': 11, 'stepTime': 0.02, 'step': 1, 
+    'jobName': 'SANDWICH_TEST', 'severe': 0, 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.025, 'attempts': 1, 
+    'timeIncrement': 0.005, 'increment': 12, 'stepTime': 0.025, 'step': 1, 
+    'jobName': 'SANDWICH_TEST', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 5, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.03, 'attempts': 1, 
+    'timeIncrement': 0.005, 'increment': 13, 'stepTime': 0.03, 'step': 1, 
+    'jobName': 'SANDWICH_TEST', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 6, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.035, 'attempts': 1, 
+    'timeIncrement': 0.00499999999999999, 'increment': 14, 'stepTime': 0.035, 
+    'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 7, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.04, 'attempts': 1, 
+    'timeIncrement': 0.00500000000000001, 'increment': 15, 'stepTime': 0.04, 
+    'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 1, 'iterations': 6, 
+    'phase': STANDARD_PHASE, 'equilibrium': 5})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 8, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.04, 
+    'attempts': ' 1U', 'timeIncrement': 0.005, 'increment': 16, 
+    'stepTime': 0.04, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 1, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.04, 
+    'attempts': ' 2U', 'timeIncrement': 0.00443286835951864, 'increment': 16, 
+    'stepTime': 0.04, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0419936173970138, 
+    'attempts': 3, 'timeIncrement': 0.00199361739701381, 'increment': 16, 
+    'stepTime': 0.0419936173970138, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0419936173970138, 
+    'attempts': ' 1U', 'timeIncrement': 0.00199361739701381, 'increment': 17, 
+    'stepTime': 0.0419936173970138, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0419936173970138, 
+    'attempts': ' 2U', 'timeIncrement': 0.00186438127053548, 'increment': 17, 
+    'stepTime': 0.0419936173970138, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0428683523820165, 
+    'attempts': 3, 'timeIncrement': 0.000874734985002644, 'increment': 17, 
+    'stepTime': 0.0428683523820165, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0441804548595204, 
+    'attempts': 1, 'timeIncrement': 0.00131210247750397, 'increment': 18, 
+    'stepTime': 0.0441804548595204, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.045, 'attempts': 1, 
+    'timeIncrement': 0.000819545140479581, 'increment': 19, 'stepTime': 0.045, 
+    'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 1, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 9, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.045, 
+    'attempts': ' 1U', 'timeIncrement': 0.00295223057438392, 'increment': 20, 
+    'stepTime': 0.045, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.045, 
+    'attempts': ' 2U', 'timeIncrement': 0.00272244406852477, 'increment': 20, 
+    'stepTime': 0.045, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0462629106326373, 
+    'attempts': 3, 'timeIncrement': 0.0012629106326373, 'increment': 20, 
+    'stepTime': 0.0462629106326373, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0462629106326373, 
+    'attempts': ' 1U', 'timeIncrement': 0.00189436594895595, 'increment': 21, 
+    'stepTime': 0.0462629106326373, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0462629106326373, 
+    'attempts': ' 2U', 'timeIncrement': 0.0017774283934622, 'increment': 21, 
+    'stepTime': 0.0462629106326373, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0470992149975561, 
+    'attempts': 3, 'timeIncrement': 0.000836304364918824, 'increment': 21, 
+    'stepTime': 0.0470992149975561, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0483536715449344, 
+    'attempts': 1, 'timeIncrement': 0.00125445654737824, 'increment': 22, 
+    'stepTime': 0.0483536715449344, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.05, 'attempts': 1, 
+    'timeIncrement': 0.00164632845506563, 'increment': 23, 'stepTime': 0.05, 
+    'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 10, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.05, 
+    'attempts': ' 1U', 'timeIncrement': 0.00246949268259845, 'increment': 24, 
+    'stepTime': 0.05, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.05, 
+    'attempts': ' 2U', 'timeIncrement': 0.0021663376966616, 'increment': 24, 
+    'stepTime': 0.05, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 1, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.05, 
+    'attempts': ' 3U', 'timeIncrement': 0.000959485258155142, 'increment': 24, 
+    'stepTime': 0.05, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0502970214607049, 
+    'attempts': 4, 'timeIncrement': 0.000297021460704882, 'increment': 24, 
+    'stepTime': 0.0502970214607049, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0507425536517622, 
+    'attempts': 1, 'timeIncrement': 0.000445532191057324, 'increment': 25, 
+    'stepTime': 0.0507425536517622, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0514108519383482, 
+    'attempts': 1, 'timeIncrement': 0.000668298286585985, 'increment': 26, 
+    'stepTime': 0.0514108519383482, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0524132993682272, 
+    'attempts': 1, 'timeIncrement': 0.00100244742987898, 'increment': 27, 
+    'stepTime': 0.0524132993682272, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 1, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0524132993682272, 
+    'attempts': ' 1U', 'timeIncrement': 0.00150367114481847, 'increment': 28, 
+    'stepTime': 0.0524132993682272, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0524132993682272, 
+    'attempts': ' 2U', 'timeIncrement': 0.00139548899602418, 'increment': 28, 
+    'stepTime': 0.0524132993682272, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0530632011485572, 
+    'attempts': 3, 'timeIncrement': 0.000649901780330062, 'increment': 28, 
+    'stepTime': 0.0530632011485572, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0540380538190523, 
+    'attempts': 1, 'timeIncrement': 0.000974852670495093, 'increment': 29, 
+    'stepTime': 0.0540380538190523, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0540380538190523, 
+    'attempts': ' 1U', 'timeIncrement': 0.000961946180947688, 'increment': 30, 
+    'stepTime': 0.0540380538190523, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0540380538190523, 
+    'attempts': ' 2U', 'timeIncrement': 0.000860953106998717, 'increment': 30, 
+    'stepTime': 0.0540380538190523, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0540380538190523, 
+    'attempts': ' 3U', 'timeIncrement': 0.000385990985305796, 'increment': 30, 
+    'stepTime': 0.0540380538190523, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0540380538190523, 
+    'attempts': ' 4U', 'timeIncrement': 0.000116379122551666, 'increment': 30, 
+    'stepTime': 0.0540380538190523, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0540380538190523, 
+    'attempts': ' 5U', 'timeIncrement': 2.64540503019964e-05, 'increment': 30, 
+    'stepTime': 0.0540380538190523, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0540428733777035, 
+    'attempts': 6, 'timeIncrement': 4.8195586511698e-06, 'increment': 30, 
+    'stepTime': 0.0540428733777035, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0540501027156802, 
+    'attempts': 1, 'timeIncrement': 7.22933797675471e-06, 'increment': 31, 
+    'stepTime': 0.0540501027156802, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0540609467226454, 
+    'attempts': 1, 'timeIncrement': 1.08440069651321e-05, 'increment': 32, 
+    'stepTime': 0.0540609467226454, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0540772127330931, 
+    'attempts': 1, 'timeIncrement': 1.62660104476981e-05, 'increment': 33, 
+    'stepTime': 0.0540772127330931, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0541016117487646, 
+    'attempts': 1, 'timeIncrement': 2.43990156715471e-05, 'increment': 34, 
+    'stepTime': 0.0541016117487646, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0541382102722719, 
+    'attempts': 1, 'timeIncrement': 3.65985235073207e-05, 'increment': 35, 
+    'stepTime': 0.0541382102722719, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0541931080575329, 
+    'attempts': 1, 'timeIncrement': 5.4897785260981e-05, 'increment': 36, 
+    'stepTime': 0.0541931080575329, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0542754547354244, 
+    'attempts': 1, 'timeIncrement': 8.23466778914716e-05, 'increment': 37, 
+    'stepTime': 0.0542754547354244, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0543989747522616, 
+    'attempts': 1, 'timeIncrement': 0.000123520016837207, 'increment': 38, 
+    'stepTime': 0.0543989747522616, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0545842547775174, 
+    'attempts': 1, 'timeIncrement': 0.000185280025255811, 'increment': 39, 
+    'stepTime': 0.0545842547775174, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0548621748154011, 
+    'attempts': 1, 'timeIncrement': 0.000277920037883717, 'increment': 40, 
+    'stepTime': 0.0548621748154011, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.055, 'attempts': 1, 
+    'timeIncrement': 0.000137825184598873, 'increment': 41, 'stepTime': 0.055, 
+    'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 11, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0556253200852384, 
+    'attempts': 1, 'timeIncrement': 0.000625320085238362, 'increment': 42, 
+    'stepTime': 0.0556253200852384, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0565633002130959, 
+    'attempts': 1, 'timeIncrement': 0.000937980127857543, 'increment': 43, 
+    'stepTime': 0.0565633002130959, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0579702704048822, 
+    'attempts': 1, 'timeIncrement': 0.00140697019178632, 'increment': 44, 
+    'stepTime': 0.0579702704048822, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0579702704048822, 
+    'attempts': ' 1U', 'timeIncrement': 0.00202972959511778, 'increment': 45, 
+    'stepTime': 0.0579702704048822, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0579702704048822, 
+    'attempts': ' 2U', 'timeIncrement': 0.00187966890910321, 'increment': 45, 
+    'stepTime': 0.0579702704048822, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0579702704048822, 
+    'attempts': ' 3U', 'timeIncrement': 0.000872234133472602, 'increment': 45, 
+    'stepTime': 0.0579702704048822, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0579702704048822, 
+    'attempts': ' 4U', 'timeIncrement': 0.000273877455519332, 'increment': 45, 
+    'stepTime': 0.0579702704048822, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580353561531511, 
+    'attempts': 5, 'timeIncrement': 6.50857482689142e-05, 'increment': 45, 
+    'stepTime': 0.0580353561531511, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580353561531511, 
+    'attempts': ' 1U', 'timeIncrement': 9.76286224033713e-05, 'increment': 46, 
+    'stepTime': 0.0580353561531511, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580353561531511, 
+    'attempts': ' 2U', 'timeIncrement': 9.1341993000583e-05, 'increment': 46, 
+    'stepTime': 0.0580353561531511, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580353561531511, 
+    'attempts': ' 3U', 'timeIncrement': 4.2733750392134e-05, 'increment': 46, 
+    'stepTime': 0.0580353561531511, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580353561531511, 
+    'attempts': ' 4U', 'timeIncrement': 1.33373059712546e-05, 'increment': 46, 
+    'stepTime': 0.0580353561531511, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580353561531511, 
+    'attempts': ' 5U', 'timeIncrement': 3.12321176135715e-06, 'increment': 46, 
+    'stepTime': 0.0580353561531511, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580359413249482, 
+    'attempts': 6, 'timeIncrement': 5.85171797103457e-07, 'increment': 46, 
+    'stepTime': 0.0580359413249482, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580368190826439, 
+    'attempts': 1, 'timeIncrement': 8.77757695655185e-07, 'increment': 47, 
+    'stepTime': 0.0580368190826439, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580381357191874, 
+    'attempts': 1, 'timeIncrement': 1.31663654348278e-06, 'increment': 48, 
+    'stepTime': 0.0580381357191874, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580401106740026, 
+    'attempts': 1, 'timeIncrement': 1.97495481522417e-06, 'increment': 49, 
+    'stepTime': 0.0580401106740026, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580430731062254, 
+    'attempts': 1, 'timeIncrement': 2.96243222283625e-06, 'increment': 50, 
+    'stepTime': 0.0580430731062254, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580475167545597, 
+    'attempts': 1, 'timeIncrement': 4.44364833425437e-06, 'increment': 51, 
+    'stepTime': 0.0580475167545597, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580541822270611, 
+    'attempts': 1, 'timeIncrement': 6.66547250138156e-06, 'increment': 52, 
+    'stepTime': 0.0580541822270611, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580641804358131, 
+    'attempts': 1, 'timeIncrement': 9.99820875207234e-06, 'increment': 53, 
+    'stepTime': 0.0580641804358131, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0580791777489413, 
+    'attempts': 1, 'timeIncrement': 1.49973131281085e-05, 'increment': 54, 
+    'stepTime': 0.0580791777489413, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0581016737186334, 
+    'attempts': 1, 'timeIncrement': 2.24959696921628e-05, 'increment': 55, 
+    'stepTime': 0.0581016737186334, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0581354176731717, 
+    'attempts': 1, 'timeIncrement': 3.37439545382442e-05, 'increment': 56, 
+    'stepTime': 0.0581354176731717, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.058186033604979, 
+    'attempts': 1, 'timeIncrement': 5.06159318073662e-05, 'increment': 57, 
+    'stepTime': 0.058186033604979, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0582619575026901, 
+    'attempts': 1, 'timeIncrement': 7.59238977110493e-05, 'increment': 58, 
+    'stepTime': 0.0582619575026901, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0582619575026901, 
+    'attempts': ' 1U', 'timeIncrement': 0.000113885846566574, 'increment': 59, 
+    'stepTime': 0.0582619575026901, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0582619575026901, 
+    'attempts': ' 2U', 'timeIncrement': 0.000107896931783909, 'increment': 59, 
+    'stepTime': 0.0582619575026901, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0582619575026901, 
+    'attempts': ' 3U', 'timeIncrement': 5.11151734271591e-05, 'increment': 59, 
+    'stepTime': 0.0582619575026901, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0582619575026901, 
+    'attempts': ' 4U', 'timeIncrement': 1.61581113997751e-05, 'increment': 59, 
+    'stepTime': 0.0582619575026901, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0582619575026901, 
+    'attempts': ' 5U', 'timeIncrement': 3.83306199924516e-06, 'increment': 59, 
+    'stepTime': 0.0582619575026901, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0582626850764031, 
+    'attempts': 6, 'timeIncrement': 7.27573713063545e-07, 'increment': 59, 
+    'stepTime': 0.0582626850764031, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0582637764369727, 
+    'attempts': 1, 'timeIncrement': 1.09136056959532e-06, 'increment': 60, 
+    'stepTime': 0.0582637764369727, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0582654134778271, 
+    'attempts': 1, 'timeIncrement': 1.63704085439298e-06, 'increment': 61, 
+    'stepTime': 0.0582654134778271, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0582678690391087, 
+    'attempts': 1, 'timeIncrement': 2.45556128158947e-06, 'increment': 62, 
+    'stepTime': 0.0582678690391087, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0582715523810311, 
+    'attempts': 1, 'timeIncrement': 3.6833419223842e-06, 'increment': 63, 
+    'stepTime': 0.0582715523810311, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0582770773939147, 
+    'attempts': 1, 'timeIncrement': 5.5250128835763e-06, 'increment': 64, 
+    'stepTime': 0.0582770773939147, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.05828536491324, 
+    'attempts': 1, 'timeIncrement': 8.28751932536445e-06, 'increment': 65, 
+    'stepTime': 0.05828536491324, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0582977961922281, 
+    'attempts': 1, 'timeIncrement': 1.24312789880467e-05, 'increment': 66, 
+    'stepTime': 0.0582977961922281, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0583164431107102, 
+    'attempts': 1, 'timeIncrement': 1.864691848207e-05, 'increment': 67, 
+    'stepTime': 0.0583164431107102, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0583444134884333, 
+    'attempts': 1, 'timeIncrement': 2.7970377723105e-05, 'increment': 68, 
+    'stepTime': 0.0583444134884333, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0583863690550179, 
+    'attempts': 1, 'timeIncrement': 4.19555665846575e-05, 'increment': 69, 
+    'stepTime': 0.0583863690550179, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0584493024048949, 
+    'attempts': 1, 'timeIncrement': 6.29333498769863e-05, 'increment': 70, 
+    'stepTime': 0.0584493024048949, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0585437024297104, 
+    'attempts': 1, 'timeIncrement': 9.44000248154794e-05, 'increment': 71, 
+    'stepTime': 0.0585437024297104, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0586853024669336, 
+    'attempts': 1, 'timeIncrement': 0.000141600037223219, 'increment': 72, 
+    'stepTime': 0.0586853024669336, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0588977025227684, 
+    'attempts': 1, 'timeIncrement': 0.000212400055834829, 'increment': 73, 
+    'stepTime': 0.0588977025227684, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0592163026065207, 
+    'attempts': 1, 'timeIncrement': 0.000318600083752243, 'increment': 74, 
+    'stepTime': 0.0592163026065207, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0592163026065207, 
+    'attempts': ' 1U', 'timeIncrement': 0.000477900125628364, 'increment': 75, 
+    'stepTime': 0.0592163026065207, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0592163026065207, 
+    'attempts': ' 2U', 'timeIncrement': 0.000437479445167368, 'increment': 75, 
+    'stepTime': 0.0592163026065207, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0592163026065207, 
+    'attempts': ' 3U', 'timeIncrement': 0.000200349061979097, 'increment': 75, 
+    'stepTime': 0.0592163026065207, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0592163026065207, 
+    'attempts': ' 4U', 'timeIncrement': 6.13763757455636e-05, 'increment': 75, 
+    'stepTime': 0.0592163026065207, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0592163026065207, 
+    'attempts': ' 5U', 'timeIncrement': 1.41321624583888e-05, 'increment': 75, 
+    'stepTime': 0.0592163026065207, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0592189076615025, 
+    'attempts': 6, 'timeIncrement': 2.60505498182065e-06, 'increment': 75, 
+    'stepTime': 0.0592189076615025, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0592228152439752, 
+    'attempts': 1, 'timeIncrement': 3.90758247273098e-06, 'increment': 76, 
+    'stepTime': 0.0592228152439752, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0592286766176843, 
+    'attempts': 1, 'timeIncrement': 5.86137370909647e-06, 'increment': 77, 
+    'stepTime': 0.0592286766176843, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.059237468678248, 
+    'attempts': 1, 'timeIncrement': 8.79206056364471e-06, 'increment': 78, 
+    'stepTime': 0.059237468678248, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0592506567690934, 
+    'attempts': 1, 'timeIncrement': 1.31880908454671e-05, 'increment': 79, 
+    'stepTime': 0.0592506567690934, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0592704389053616, 
+    'attempts': 1, 'timeIncrement': 1.97821362682006e-05, 'increment': 80, 
+    'stepTime': 0.0592704389053616, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0593001121097639, 
+    'attempts': 1, 'timeIncrement': 2.96732044023009e-05, 'increment': 81, 
+    'stepTime': 0.0593001121097639, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0593446219163674, 
+    'attempts': 1, 'timeIncrement': 4.45098066034513e-05, 'increment': 82, 
+    'stepTime': 0.0593446219163674, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0594113866262726, 
+    'attempts': 1, 'timeIncrement': 6.6764709905177e-05, 'increment': 83, 
+    'stepTime': 0.0594113866262726, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595115336911303, 
+    'attempts': 1, 'timeIncrement': 0.000100147064857765, 'increment': 84, 
+    'stepTime': 0.0595115336911303, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595115336911303, 
+    'attempts': ' 1U', 'timeIncrement': 0.000150220597286648, 'increment': 85, 
+    'stepTime': 0.0595115336911303, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595115336911303, 
+    'attempts': ' 2U', 'timeIncrement': 0.000136384996991659, 'increment': 85, 
+    'stepTime': 0.0595115336911303, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595115336911303, 
+    'attempts': ' 3U', 'timeIncrement': 6.19206584113137e-05, 'increment': 85, 
+    'stepTime': 0.0595115336911303, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595115336911303, 
+    'attempts': ' 4U', 'timeIncrement': 1.87556619582394e-05, 'increment': 85, 
+    'stepTime': 0.0595115336911303, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595115336911303, 
+    'attempts': ' 5U', 'timeIncrement': 4.26247713530047e-06, 'increment': 85, 
+    'stepTime': 0.0595115336911303, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595123087476557, 
+    'attempts': 6, 'timeIncrement': 7.75056525365024e-07, 'increment': 85, 
+    'stepTime': 0.0595123087476557, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595134713324438, 
+    'attempts': 1, 'timeIncrement': 1.16258478804754e-06, 'increment': 86, 
+    'stepTime': 0.0595134713324438, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595152152096258, 
+    'attempts': 1, 'timeIncrement': 1.7438771820713e-06, 'increment': 87, 
+    'stepTime': 0.0595152152096258, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595178310253989, 
+    'attempts': 1, 'timeIncrement': 2.61581577310696e-06, 'increment': 88, 
+    'stepTime': 0.0595178310253989, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595217547490586, 
+    'attempts': 1, 'timeIncrement': 3.92372365966043e-06, 'increment': 89, 
+    'stepTime': 0.0595217547490586, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595276403345481, 
+    'attempts': 1, 'timeIncrement': 5.88558548949065e-06, 'increment': 90, 
+    'stepTime': 0.0595276403345481, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595364687127823, 
+    'attempts': 1, 'timeIncrement': 8.82837823423598e-06, 'increment': 91, 
+    'stepTime': 0.0595364687127823, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595497112801337, 
+    'attempts': 1, 'timeIncrement': 1.3242567351354e-05, 'increment': 92, 
+    'stepTime': 0.0595497112801337, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595695751311607, 
+    'attempts': 1, 'timeIncrement': 1.98638510270309e-05, 'increment': 93, 
+    'stepTime': 0.0595695751311607, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0595993709077012, 
+    'attempts': 1, 'timeIncrement': 2.97957765405464e-05, 'increment': 94, 
+    'stepTime': 0.0595993709077012, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0596440645725121, 
+    'attempts': 1, 'timeIncrement': 4.46936648108196e-05, 'increment': 95, 
+    'stepTime': 0.0596440645725121, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0597111050697283, 
+    'attempts': 1, 'timeIncrement': 6.70404972162294e-05, 'increment': 96, 
+    'stepTime': 0.0597111050697283, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0598116658155526, 
+    'attempts': 1, 'timeIncrement': 0.000100560745824344, 'increment': 97, 
+    'stepTime': 0.0598116658155526, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.06, 'attempts': 1, 
+    'timeIncrement': 0.000188334184447354, 'increment': 98, 'stepTime': 0.06, 
+    'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 12, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.06, 
+    'attempts': ' 1U', 'timeIncrement': 0.00028250127667103, 'increment': 99, 
+    'stepTime': 0.06, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.06, 
+    'attempts': ' 2U', 'timeIncrement': 0.000247072186626193, 'increment': 99, 
+    'stepTime': 0.06, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.06, 
+    'attempts': ' 3U', 'timeIncrement': 0.000108078512654718, 'increment': 99, 
+    'stepTime': 0.06, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.06, 
+    'attempts': ' 4U', 'timeIncrement': 3.1537845801186e-05, 'increment': 99, 
+    'stepTime': 0.06, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.06, 
+    'attempts': ' 5U', 'timeIncrement': 6.89877048366404e-06, 'increment': 99, 
+    'stepTime': 0.06, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600012067866724, 
+    'attempts': 6, 'timeIncrement': 1.20678667239186e-06, 'increment': 99, 
+    'stepTime': 0.0600012067866724, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600012067866724, 
+    'attempts': ' 1U', 'timeIncrement': 1.81018000858778e-06, 'increment': 100, 
+    'stepTime': 0.0600012067866724, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600012067866724, 
+    'attempts': ' 2U', 'timeIncrement': 1.70248423594436e-06, 'increment': 100, 
+    'stepTime': 0.0600012067866724, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600012067866724, 
+    'attempts': ' 3U', 'timeIncrement': 8.00597023232785e-07, 'increment': 100, 
+    'stepTime': 0.0600012067866724, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600012067866724, 
+    'attempts': ' 4U', 'timeIncrement': 2.50986070673483e-07, 'increment': 100, 
+    'stepTime': 0.0600012067866724, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600012067866724, 
+    'attempts': ' 5U', 'timeIncrement': 5.90125080057009e-08, 'increment': 100, 
+    'stepTime': 0.0600012067866724, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 1, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600012178867907, 
+    'attempts': 6, 'timeIncrement': 1.11001182679431e-08, 'increment': 100, 
+    'stepTime': 0.0600012178867907, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 1, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600012345369681, 
+    'attempts': 1, 'timeIncrement': 1.66501774019146e-08, 'increment': 101, 
+    'stepTime': 0.0600012345369681, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600012595122342, 
+    'attempts': 1, 'timeIncrement': 2.49752661028719e-08, 'increment': 102, 
+    'stepTime': 0.0600012595122342, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600012969751333, 
+    'attempts': 1, 'timeIncrement': 3.74628991543079e-08, 'increment': 103, 
+    'stepTime': 0.0600012969751333, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.060001353169482, 
+    'attempts': 1, 'timeIncrement': 5.61943487314619e-08, 'increment': 104, 
+    'stepTime': 0.060001353169482, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600014374610051, 
+    'attempts': 1, 'timeIncrement': 8.42915230971928e-08, 'increment': 105, 
+    'stepTime': 0.0600014374610051, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600015638982898, 
+    'attempts': 1, 'timeIncrement': 1.26437284645789e-07, 'increment': 106, 
+    'stepTime': 0.0600015638982898, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600017535542168, 
+    'attempts': 1, 'timeIncrement': 1.89655926968684e-07, 'increment': 107, 
+    'stepTime': 0.0600017535542168, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600020380381072, 
+    'attempts': 1, 'timeIncrement': 2.84483890453026e-07, 'increment': 108, 
+    'stepTime': 0.0600020380381072, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 1, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600024647639429, 
+    'attempts': 1, 'timeIncrement': 4.26725835679539e-07, 'increment': 109, 
+    'stepTime': 0.0600024647639429, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 3, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600031048526964, 
+    'attempts': 1, 'timeIncrement': 6.40088753519308e-07, 'increment': 110, 
+    'stepTime': 0.0600031048526964, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600040649858267, 
+    'attempts': 1, 'timeIncrement': 9.60133130278962e-07, 'increment': 111, 
+    'stepTime': 0.0600040649858267, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600055051855221, 
+    'attempts': 1, 'timeIncrement': 1.44019969541844e-06, 'increment': 112, 
+    'stepTime': 0.0600055051855221, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600076654850652, 
+    'attempts': 1, 'timeIncrement': 2.16029954312766e-06, 'increment': 113, 
+    'stepTime': 0.0600076654850652, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600109059343799, 
+    'attempts': 1, 'timeIncrement': 3.2404493146915e-06, 'increment': 114, 
+    'stepTime': 0.0600109059343799, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.060015766608352, 
+    'attempts': 1, 'timeIncrement': 4.86067397203724e-06, 'increment': 115, 
+    'stepTime': 0.060015766608352, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.06002305761931, 
+    'attempts': 1, 'timeIncrement': 7.29101095805587e-06, 'increment': 116, 
+    'stepTime': 0.06002305761931, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600339941357471, 
+    'attempts': 1, 'timeIncrement': 1.09365164370838e-05, 'increment': 117, 
+    'stepTime': 0.0600339941357471, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600503989104027, 
+    'attempts': 1, 'timeIncrement': 1.64047746556257e-05, 'increment': 118, 
+    'stepTime': 0.0600503989104027, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0600750060723862, 
+    'attempts': 1, 'timeIncrement': 2.46071619834385e-05, 'increment': 119, 
+    'stepTime': 0.0600750060723862, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0601119168153613, 
+    'attempts': 1, 'timeIncrement': 3.69107429751578e-05, 'increment': 120, 
+    'stepTime': 0.0601119168153613, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0601672829298241, 
+    'attempts': 1, 'timeIncrement': 5.53661144627367e-05, 'increment': 121, 
+    'stepTime': 0.0601672829298241, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0602503321015182, 
+    'attempts': 1, 'timeIncrement': 8.30491716941051e-05, 'increment': 122, 
+    'stepTime': 0.0602503321015182, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0603749058590593, 
+    'attempts': 1, 'timeIncrement': 0.000124573757541158, 'increment': 123, 
+    'stepTime': 0.0603749058590593, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0605617664953711, 
+    'attempts': 1, 'timeIncrement': 0.000186860636311736, 'increment': 124, 
+    'stepTime': 0.0605617664953711, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0608420574498387, 
+    'attempts': 1, 'timeIncrement': 0.000280290954467605, 'increment': 125, 
+    'stepTime': 0.0608420574498387, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0612624938815401, 
+    'attempts': 1, 'timeIncrement': 0.000420436431701407, 'increment': 126, 
+    'stepTime': 0.0612624938815401, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0612624938815401, 
+    'attempts': ' 1U', 'timeIncrement': 0.000630654647552111, 'increment': 127, 
+    'stepTime': 0.0612624938815401, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0612624938815401, 
+    'attempts': ' 2U', 'timeIncrement': 0.000583873577317335, 'increment': 127, 
+    'stepTime': 0.0612624938815401, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0612624938815401, 
+    'attempts': ' 3U', 'timeIncrement': 0.000270482622021634, 'increment': 127, 
+    'stepTime': 0.0612624938815401, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0612624938815401, 
+    'attempts': ' 4U', 'timeIncrement': 8.39738239049037e-05, 'increment': 127, 
+    'stepTime': 0.0612624938815401, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0612624938815401, 
+    'attempts': ' 5U', 'timeIncrement': 1.96231035575791e-05, 'increment': 127, 
+    'stepTime': 0.0612624938815401, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0612661674364512, 
+    'attempts': 6, 'timeIncrement': 3.67355491111754e-06, 'increment': 127, 
+    'stepTime': 0.0612661674364512, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0612716777688179, 
+    'attempts': 1, 'timeIncrement': 5.5103323666763e-06, 'increment': 128, 
+    'stepTime': 0.0612716777688179, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0612799432673679, 
+    'attempts': 1, 'timeIncrement': 8.26549855001446e-06, 'increment': 129, 
+    'stepTime': 0.0612799432673679, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0612923415151929, 
+    'attempts': 1, 'timeIncrement': 1.23982478250217e-05, 'increment': 130, 
+    'stepTime': 0.0612923415151929, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0613109388869304, 
+    'attempts': 1, 'timeIncrement': 1.85973717375325e-05, 'increment': 131, 
+    'stepTime': 0.0613109388869304, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0613388349445367, 
+    'attempts': 1, 'timeIncrement': 2.78960576062988e-05, 'increment': 132, 
+    'stepTime': 0.0613388349445367, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0613806790309462, 
+    'attempts': 1, 'timeIncrement': 4.18440864094482e-05, 'increment': 133, 
+    'stepTime': 0.0613806790309462, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0614434451605604, 
+    'attempts': 1, 'timeIncrement': 6.27661296141723e-05, 'increment': 134, 
+    'stepTime': 0.0614434451605604, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0615375943549816, 
+    'attempts': 1, 'timeIncrement': 9.41491944212584e-05, 'increment': 135, 
+    'stepTime': 0.0615375943549816, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0616788181466135, 
+    'attempts': 1, 'timeIncrement': 0.000141223791631888, 'increment': 136, 
+    'stepTime': 0.0616788181466135, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0618906538340613, 
+    'attempts': 1, 'timeIncrement': 0.000211835687447831, 'increment': 137, 
+    'stepTime': 0.0618906538340613, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0622084073652331, 
+    'attempts': 1, 'timeIncrement': 0.000317753531171747, 'increment': 138, 
+    'stepTime': 0.0622084073652331, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0622084073652331, 
+    'attempts': ' 1U', 'timeIncrement': 0.000476630296757621, 'increment': 139, 
+    'stepTime': 0.0622084073652331, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 16, 'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0623275649394225, 
+    'attempts': 2, 'timeIncrement': 0.000119157574189405, 'increment': 139, 
+    'stepTime': 0.0623275649394225, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0625063013007066, 
+    'attempts': 1, 'timeIncrement': 0.000178736361284108, 'increment': 140, 
+    'stepTime': 0.0625063013007066, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0627744058426328, 
+    'attempts': 1, 'timeIncrement': 0.000268104541926162, 'increment': 141, 
+    'stepTime': 0.0627744058426328, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.063176562655522, 
+    'attempts': 1, 'timeIncrement': 0.000402156812889243, 'increment': 142, 
+    'stepTime': 0.063176562655522, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0637797978748559, 
+    'attempts': 1, 'timeIncrement': 0.000603235219333864, 'increment': 143, 
+    'stepTime': 0.0637797978748559, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0646846507038567, 
+    'attempts': 1, 'timeIncrement': 0.000904852829000796, 'increment': 144, 
+    'stepTime': 0.0646846507038567, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.065, 'attempts': 1, 
+    'timeIncrement': 0.000315349296143339, 'increment': 145, 'stepTime': 0.065, 
+    'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 13, 'jobName': 'SANDWICH_TEST'})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.065, 
+    'attempts': ' 1U', 'timeIncrement': 0.00203591886525179, 'increment': 146, 
+    'stepTime': 0.065, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 1, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.065, 
+    'attempts': ' 2U', 'timeIncrement': 0.00192469637398186, 'increment': 146, 
+    'stepTime': 0.065, 'step': 1, 'jobName': 'SANDWICH_TEST', 'severe': 1, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 0})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0659111537213144, 
+    'attempts': 3, 'timeIncrement': 0.000911153721314428, 'increment': 146, 
+    'stepTime': 0.0659111537213144, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 1, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0672778843032861, 
+    'attempts': 1, 'timeIncrement': 0.00136673058197164, 'increment': 147, 
+    'stepTime': 0.0672778843032861, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['SANDWICH_TEST']._Message(STATUS, {'totalTime': 0.0693279801762435, 
+    'attempts': 1, 'timeIncrement': 0.00205009587295746, 'increment': 148, 
+    'stepTime': 0.0693279801762435, 'step': 1, 'jobName': 'SANDWICH_TEST', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+# Save by jhseo on 2022_09_30-13.05.09; build 2022.HF2 2022_03_21-08.37.34 176360
