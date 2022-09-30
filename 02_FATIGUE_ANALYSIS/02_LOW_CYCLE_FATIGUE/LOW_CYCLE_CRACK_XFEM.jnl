@@ -1,0 +1,26 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].PartFromInputFile(inputFileName=
+    'D:/00_FATIGUE/03_CRACK_LOW_CYCLE_ABAQUS/ex_1/crackprop_hole_fatigue_xfem_cpe4.inp')
+mdb.ModelFromInputFile(inputFileName=
+    'D:/00_FATIGUE/03_CRACK_LOW_CYCLE_ABAQUS/ex_1/crackprop_hole_fatigue_xfem_cpe4.inp'
+    , name='crackprop_hole_fatigue_xfem_cpe4')
+#* The first time incrementation parameter, I(O), cannot be changed in a 
+#* discontinuous analysis.
+del mdb.models['Model-1']
+mdb.models.changeKey(fromName='crackprop_hole_fatigue_xfem_cpe4', toName=
+    'CRACK_LOW_CYCLE_XFEM')
+# Save by jhseo on 2022_09_30-14.13.20; build 2022.HF2 2022_03_21-08.37.34 176360
+# Save by jhseo on 2022_09_30-14.13.21; build 2022.HF2 2022_03_21-08.37.34 176360
