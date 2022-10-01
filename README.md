@@ -8,7 +8,7 @@ Repository for sharing the example cases for composite and fatigue analyses usin
 **Sandwich Form Crack Initiation using XFEM**
 ![plot](01_COMPOSITE_ANALYSIS/02_SANDWICH__BENDING_TEST_CRACK_XFEM/SANDWICH_CRACK_PROPAGATION.JPG)
 
-**Goodman Mean-stress Effect**
+**Goodman Mean-stress Effect: FE-Safe**
 ![plot](02_FATIGUE_ANALYSIS/01_GOODMAN_SPECIMEN/ABAQUS_SCREEN.JPG)
 
 **Low-cycle Fatigue**
