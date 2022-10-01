@@ -1,0 +1,1344 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(200.0, 25.0))
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    71.25, 13.75), point1=(78.75, 12.5))
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(200.0, 25.0))
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    100.0, 12.5), point1=(107.5, 13.75))
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    85.0, 10.0), point1=(90.0, 10.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    84.2524566650391, -14.3086795806885), value=100.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    -22.1227264404297, 8.4873218536377), value=12.5, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0])
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], radius=10.0, 
+    textPoint=(71.4965362548828, 41.9974517822266))
+mdb.models['Model-1'].sketches['__profile__'].dimensions[2].setValues(value=7)
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='OHT', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['OHT'].BaseSolidExtrude(depth=2.0, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['OHT'].DatumPlaneByPrincipalPlane(offset=90.0, 
+    principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['OHT'].DatumPlaneByPrincipalPlane(offset=110.0, 
+    principalPlane=XZPLANE)
+mdb.models['Model-1'].parts['OHT'].DatumPlaneByPrincipalPlane(offset=110.0, 
+    principalPlane=YZPLANE)
+mdb.models['Model-1'].parts['OHT'].PartitionCellByDatumPlane(cells=
+    mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(('[#1 ]', ), )
+    , datumPlane=mdb.models['Model-1'].parts['OHT'].datums[2])
+mdb.models['Model-1'].parts['OHT'].PartitionCellByDatumPlane(cells=
+    mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(('[#2 ]', ), )
+    , datumPlane=mdb.models['Model-1'].parts['OHT'].datums[4])
+mdb.models['Model-1'].parts['OHT'].PartitionCellByPlaneThreePoints(cells=
+    mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(('[#1 ]', ), )
+    , point1=mdb.models['Model-1'].parts['OHT'].vertices[7], point2=
+    mdb.models['Model-1'].parts['OHT'].InterestingPoint(
+    mdb.models['Model-1'].parts['OHT'].edges[7], CENTER), point3=
+    mdb.models['Model-1'].parts['OHT'].vertices[0])
+mdb.models['Model-1'].parts['OHT'].PartitionCellByPlaneThreePoints(cells=
+    mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(('[#3 ]', ), )
+    , point1=mdb.models['Model-1'].parts['OHT'].vertices[11], point2=
+    mdb.models['Model-1'].parts['OHT'].InterestingPoint(
+    mdb.models['Model-1'].parts['OHT'].edges[12], CENTER), point3=
+    mdb.models['Model-1'].parts['OHT'].InterestingPoint(
+    mdb.models['Model-1'].parts['OHT'].edges[10], CENTER))
+mdb.models['Model-1'].parts['OHT'].PartitionCellByPlaneThreePoints(cells=
+    mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(('[#a ]', ), )
+    , point1=mdb.models['Model-1'].parts['OHT'].InterestingPoint(
+    mdb.models['Model-1'].parts['OHT'].edges[8], CENTER), point2=
+    mdb.models['Model-1'].parts['OHT'].InterestingPoint(
+    mdb.models['Model-1'].parts['OHT'].edges[11], CENTER), point3=
+    mdb.models['Model-1'].parts['OHT'].InterestingPoint(
+    mdb.models['Model-1'].parts['OHT'].edges[34], MIDDLE))
+mdb.models['Model-1'].Material(name='GFPP')
+mdb.models['Model-1'].materials['GFPP'].Elastic(table=((34600.0, 4300.0, 
+    4300.0, 0.38, 0.38, 0.4, 1700.0, 1700.0, 1450.0), ), type=
+    ENGINEERING_CONSTANTS)
+mdb.models['Model-1'].materials['GFPP'].HashinDamageInitiation(table=((700.0, 
+    400.0, 20.0, 60.0, 35.0, 35.0), ))
+mdb.models['Model-1'].materials['GFPP'].hashinDamageInitiation.DamageEvolution(
+    table=((10.0, 6.0, 0.2, 0.4), ), type=ENERGY)
+mdb.models['Model-1'].materials['GFPP'].hashinDamageInitiation.DamageStabilization(
+    fiberCompressiveCoeff=0.0001, fiberTensileCoeff=0.0001, 
+    matrixCompressiveCoeff=0.0001, matrixTensileCoeff=0.0001)
+mdb.models['Model-1'].parts['OHT'].CompositeLayup(description='', elementType=
+    CONTINUUM_SHELL, name='CompositeLayup-1', symmetric=True)
+mdb.models['Model-1'].parts['OHT'].compositeLayups['CompositeLayup-1'].Section(
+    integrationRule=SIMPSON, poissonDefinition=DEFAULT, preIntegrate=OFF, 
+    temperature=GRADIENT, thicknessModulus=None, useDensity=OFF)
+mdb.models['Model-1'].parts['OHT'].compositeLayups['CompositeLayup-1'].ReferenceOrientation(
+    additionalRotationType=ROTATION_NONE, angle=0.0, axis=AXIS_3, fieldName='', 
+    localCsys=None, orientationType=GLOBAL, stackDirection=STACK_3)
+mdb.models['Model-1'].parts['OHT'].compositeLayups['CompositeLayup-1'].suppress(
+    )
+mdb.models['Model-1'].parts['OHT'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='GFPP', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=0.0, plyName='Ply-1', region=Region(
+    cells=mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(mask=(
+    '[#ff ]', ), )), suppressed=False, thickness=0.25, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['OHT'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='GFPP', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=45.0, plyName='Ply-2', region=Region(
+    cells=mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(mask=(
+    '[#ff ]', ), )), suppressed=False, thickness=0.25, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['OHT'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='GFPP', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=-45.0, plyName='Ply-3', region=Region(
+    cells=mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(mask=(
+    '[#ff ]', ), )), suppressed=False, thickness=0.25, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['OHT'].compositeLayups['CompositeLayup-1'].CompositePly(
+    additionalRotationField='', additionalRotationType=ROTATION_NONE, angle=0.0
+    , axis=AXIS_3, material='GFPP', numIntPoints=3, orientationType=
+    SPECIFY_ORIENT, orientationValue=90.0, plyName='Ply-4', region=Region(
+    cells=mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(mask=(
+    '[#ff ]', ), )), suppressed=False, thickness=0.25, thicknessType=
+    SPECIFY_THICKNESS)
+mdb.models['Model-1'].parts['OHT'].compositeLayups['CompositeLayup-1'].resume()
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='OHT-1', part=
+    mdb.models['Model-1'].parts['OHT'])
+mdb.models['Model-1'].StaticStep(adaptiveDampingRatio=0.05, 
+    continueDampingFactors=False, initialInc=0.001, maxNumInc=10000, name=
+    'Step-1', previous='Initial', stabilizationMagnitude=0.0002, 
+    stabilizationMethod=DISSIPATED_ENERGY_FRACTION)
+del mdb.models['Model-1'].parts['OHT'].features['Datum plane-2']
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].steps['Step-1'].control.setValues(allowPropagation=OFF, 
+    resetDefaultValues=OFF, timeIncrementation=(20.0, 40.0, 9.0, 16.0, 10.0, 
+    4.0, 12.0, 20.0, 6.0, 3.0, 50.0))
+mdb.models['Model-1'].fieldOutputRequests['F-Output-1'].setValues(numIntervals=
+    100, variables=('S', 'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 
+    'CSTRESS', 'CDISP', 'DAMAGEC', 'DAMAGET', 'DAMAGEFT', 'DAMAGEFC', 
+    'DAMAGEMT', 'DAMAGEMC', 'DAMAGESHR', 'SDEG', 'HSNFTCRT', 'HSNFCCRT', 
+    'HSNMTCRT', 'HSNMCCRT', 'STATUS'))
+mdb.models['Model-1'].historyOutputRequests['H-Output-1'].setValues(
+    numIntervals=100)
+mdb.models['Model-1'].rootAssembly.Set(faces=
+    mdb.models['Model-1'].rootAssembly.instances['OHT-1'].faces.getSequenceFromMask(
+    ('[#0 #2 ]', ), ), name='Set-1')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-1', region=mdb.models['Model-1'].rootAssembly.sets['Set-1'], u1=0.0, 
+    u2=0.0, u3=0.0, ur1=0.0, ur2=0.0, ur3=0.0)
+mdb.models['Model-1'].rootAssembly.Set(faces=
+    mdb.models['Model-1'].rootAssembly.instances['OHT-1'].faces.getSequenceFromMask(
+    ('[#0 #8 ]', ), ), name='Set-2')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'LOAD', region=mdb.models['Model-1'].rootAssembly.sets['Set-2'], u1=10.0, 
+    u2=0.0, u3=0.0, ur1=0.0, ur2=0.0, ur3=0.0)
+mdb.models['Model-1'].parts['OHT'].seedPart(deviationFactor=0.1, minSizeFactor=
+    0.1, size=2.0)
+mdb.models['Model-1'].parts['OHT'].generateMesh()
+mdb.models['Model-1'].parts['OHT'].deleteMesh()
+mdb.models['Model-1'].parts['OHT'].seedPart(deviationFactor=0.1, minSizeFactor=
+    0.1, size=1.0)
+mdb.models['Model-1'].parts['OHT'].generateMesh()
+mdb.models['Model-1'].parts['OHT'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(('[#2b ]', ), 
+    ))
+mdb.models['Model-1'].parts['OHT'].seedEdgeByNumber(constraint=FINER, edges=
+    mdb.models['Model-1'].parts['OHT'].edges.getSequenceFromMask((
+    '[#900100 #80000 ]', ), ), number=10)
+mdb.models['Model-1'].parts['OHT'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(('[#4 ]', ), 
+    ))
+mdb.models['Model-1'].parts['OHT'].seedEdgeByNumber(constraint=FINER, edges=
+    mdb.models['Model-1'].parts['OHT'].edges.getSequenceFromMask(('[#0 #1 ]', 
+    ), ), number=20)
+mdb.models['Model-1'].parts['OHT'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(('[#10 ]', ), 
+    ))
+mdb.models['Model-1'].parts['OHT'].seedEdgeByNumber(constraint=FINER, edges=
+    mdb.models['Model-1'].parts['OHT'].edges.getSequenceFromMask(('[#0 #60 ]', 
+    ), ), number=10)
+mdb.models['Model-1'].parts['OHT'].generateMesh()
+mdb.models['Model-1'].parts['OHT'].setElementType(elemTypes=(ElemType(
+    elemCode=SC8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    hourglassControl=DEFAULT), ElemType(elemCode=SC6R, elemLibrary=STANDARD), 
+    ElemType(elemCode=UNKNOWN_TET, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(('[#ff ]', ), 
+    ), ))
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='NO_STACK_CORRECT', nodalOutputPrecision=
+    SINGLE, numCpus=7, numDomains=7, numGPUs=0, numThreadsPerMpiProcess=1, 
+    queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine=''
+    , waitHours=0, waitMinutes=0)
+mdb.jobs['NO_STACK_CORRECT'].submit(consistencyChecking=OFF)
+mdb.jobs['NO_STACK_CORRECT']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '20 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE NORMALS FOR SOME STACKED CONTINUUM SHELL ELEMENTS DEVIATE BY MORE THAN 20 DEGREES. THIS CAN LEAD ERRORS IN THE OUTPUT VARIABLES CTSHR.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_COMPOSITE\\09_CONINUM_SHELL\\NO_STACK_CORRECT.odb', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 31688, 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The local-3 direction (after additional rotation and permutation) of the material orientation , specified via *ORIENTATION, is in the plane of the SHELL, MEMBRANE, GASKET, COHESIVE, or SURFACE element. The local-1 direction will be projected onto the element surface and the positive element normal will be used as the local-3 direction. The elements have been identified in element set WarnElemUserNormMatOrient.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'NO_STACK_CORRECT', 'memory': 374.0})
+mdb.jobs['NO_STACK_CORRECT']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 65210.0, 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(MINIMUM_MEMORY, {'minimum_memory': 35.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.001, 
+    'attempts': 1, 'timeIncrement': 0.001, 'increment': 1, 'stepTime': 0.001, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.002, 
+    'attempts': 1, 'timeIncrement': 0.001, 'increment': 2, 'stepTime': 0.002, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.0035, 
+    'attempts': 1, 'timeIncrement': 0.0015, 'increment': 3, 'stepTime': 0.0035, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.00575, 
+    'attempts': 1, 'timeIncrement': 0.00225, 'increment': 4, 
+    'stepTime': 0.00575, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.009125, 
+    'attempts': 1, 'timeIncrement': 0.003375, 'increment': 5, 
+    'stepTime': 0.009125, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.01, 
+    'attempts': 1, 'timeIncrement': 0.000875, 'increment': 6, 'stepTime': 0.01, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.01759375, 
+    'attempts': 1, 'timeIncrement': 0.00759375, 'increment': 7, 
+    'stepTime': 0.01759375, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.02, 
+    'attempts': 1, 'timeIncrement': 0.00240625, 'increment': 8, 
+    'stepTime': 0.02, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.03, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 9, 'stepTime': 0.03, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.04, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 10, 'stepTime': 0.04, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.05, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 11, 'stepTime': 0.05, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 5, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.05, 
+    'attempts': ' 1U', 'timeIncrement': 0.01, 'increment': 12, 
+    'stepTime': 0.05, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 
+    'iterations': 16, 'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'FORCE equilibrium accepted using the alternate tolerance.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.0525, 
+    'attempts': 2, 'timeIncrement': 0.0025, 'increment': 12, 
+    'stepTime': 0.0525, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 
+    'iterations': 10, 'phase': STANDARD_PHASE, 'equilibrium': 10})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'FORCE equilibrium accepted using the alternate tolerance.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.055, 
+    'attempts': 1, 'timeIncrement': 0.0025, 'increment': 13, 'stepTime': 0.055, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 10, 
+    'phase': STANDARD_PHASE, 'equilibrium': 10})
+mdb.jobs['NO_STACK_CORRECT']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Process terminated by external request (SIGTERM or SIGINT received).', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(INTERRUPTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis interrupted by external signal', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.models['Model-1'].parts['OHT'].setElementType(elemTypes=(ElemType(
+    elemCode=SC8R, elemLibrary=STANDARD, secondOrderAccuracy=OFF, 
+    hourglassControl=ENHANCED, elemDeletion=ON, maxDegradation=0.999), 
+    ElemType(elemCode=SC6R, elemLibrary=STANDARD), ElemType(
+    elemCode=UNKNOWN_TET, elemLibrary=STANDARD)), regions=(
+    mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(('[#ff ]', ), 
+    ), ))
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.jobs['NO_STACK_CORRECT'].submit(consistencyChecking=OFF)
+mdb.jobs['NO_STACK_CORRECT']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE PARAMETER HOURGLASS = ENHANCED ON THE SECTION CONTROLS OPTION IS RELEVANT FOR THESE ELEMENTS: C3D8R, CAX4R, CGAX4R, CPEG4R, CPE4R, CPS4R, M3D4R, S4R, SC8R AND THEIR HYBRID, THERMAL AND PRESSURE COUNTERPARTS WHEREVER APPLICABLE. IT IS ALSO RELEVANT FOR ALL TYPES OF MODIFIED TRIANGULAR AND TETRAHEDRAL ELEMENTS. THIS WARNING CAN BE IGNORED IF THE FEATURE IS APPLIED TO THESE ELEMENT TYPES ONLY.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '20 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE NORMALS FOR SOME STACKED CONTINUUM SHELL ELEMENTS DEVIATE BY MORE THAN 20 DEGREES. THIS CAN LEAD ERRORS IN THE OUTPUT VARIABLES CTSHR.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_COMPOSITE\\09_CONINUM_SHELL\\NO_STACK_CORRECT.odb', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 27784, 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The local-3 direction (after additional rotation and permutation) of the material orientation , specified via *ORIENTATION, is in the plane of the SHELL, MEMBRANE, GASKET, COHESIVE, or SURFACE element. The local-1 direction will be projected onto the element surface and the positive element normal will be used as the local-3 direction. The elements have been identified in element set WarnElemUserNormMatOrient.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'NO_STACK_CORRECT', 'memory': 406.0})
+mdb.jobs['NO_STACK_CORRECT']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 65210.0, 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(MINIMUM_MEMORY, {'minimum_memory': 35.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.001, 
+    'attempts': 1, 'timeIncrement': 0.001, 'increment': 1, 'stepTime': 0.001, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.002, 
+    'attempts': 1, 'timeIncrement': 0.001, 'increment': 2, 'stepTime': 0.002, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.0035, 
+    'attempts': 1, 'timeIncrement': 0.0015, 'increment': 3, 'stepTime': 0.0035, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.00575, 
+    'attempts': 1, 'timeIncrement': 0.00225, 'increment': 4, 
+    'stepTime': 0.00575, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.009125, 
+    'attempts': 1, 'timeIncrement': 0.003375, 'increment': 5, 
+    'stepTime': 0.009125, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.01, 
+    'attempts': 1, 'timeIncrement': 0.000875, 'increment': 6, 'stepTime': 0.01, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.01759375, 
+    'attempts': 1, 'timeIncrement': 0.00759375, 'increment': 7, 
+    'stepTime': 0.01759375, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.02, 
+    'attempts': 1, 'timeIncrement': 0.00240625, 'increment': 8, 
+    'stepTime': 0.02, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.03, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 9, 'stepTime': 0.03, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.04, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 10, 'stepTime': 0.04, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.05, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 11, 'stepTime': 0.05, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 5, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.06, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 12, 'stepTime': 0.06, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 6, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.07, 
+    'attempts': 1, 'timeIncrement': 0.00999999999999999, 'increment': 13, 
+    'stepTime': 0.07, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 
+    'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 7, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.08, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 14, 'stepTime': 0.08, 
+    'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['NO_STACK_CORRECT']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 8, 'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 7 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 5 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 6 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 5 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 6 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 5 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.08, 
+    'attempts': ' 1U', 'timeIncrement': 0.01, 'increment': 15, 
+    'stepTime': 0.08, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 
+    'iterations': 16, 'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.0825, 
+    'attempts': 2, 'timeIncrement': 0.0025, 'increment': 15, 
+    'stepTime': 0.0825, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 
+    'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.0825, 
+    'attempts': ' 1U', 'timeIncrement': 0.00375, 'increment': 16, 
+    'stepTime': 0.0825, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 
+    'iterations': 16, 'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.0825, 
+    'attempts': ' 2U', 'timeIncrement': 0.0009375, 'increment': 16, 
+    'stepTime': 0.0825, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 'severe': 0, 
+    'iterations': 16, 'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.082734375, 
+    'attempts': 3, 'timeIncrement': 0.000234375, 'increment': 16, 
+    'stepTime': 0.082734375, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.082734375, 
+    'attempts': ' 1U', 'timeIncrement': 0.0003515625, 'increment': 17, 
+    'stepTime': 0.082734375, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 
+    'severe': 0, 'iterations': 16, 'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.082822265625, 
+    'attempts': 2, 'timeIncrement': 8.7890625e-05, 'increment': 17, 
+    'stepTime': 0.082822265625, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(STATUS, {'totalTime': 0.0829541015625, 
+    'attempts': 1, 'timeIncrement': 0.0001318359375, 'increment': 18, 
+    'stepTime': 0.0829541015625, 'step': 1, 'jobName': 'NO_STACK_CORRECT', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Process terminated by external request (SIGTERM or SIGINT received).', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(INTERRUPTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis interrupted by external signal', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.jobs['NO_STACK_CORRECT']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'NO_STACK_CORRECT'})
+mdb.models['Model-1'].parts['OHT'].assignStackDirection(cells=
+    mdb.models['Model-1'].parts['OHT'].cells.getSequenceFromMask(('[#ff ]', ), 
+    ), referenceRegion=mdb.models['Model-1'].parts['OHT'].faces[38])
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='HASIN_FAILURE_COMPOSITE', 
+    nodalOutputPrecision=SINGLE, numCpus=7, numDomains=7, numGPUs=1, 
+    numThreadsPerMpiProcess=1, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['HASIN_FAILURE_COMPOSITE'].submit(consistencyChecking=OFF)
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE PARAMETER HOURGLASS = ENHANCED ON THE SECTION CONTROLS OPTION IS RELEVANT FOR THESE ELEMENTS: C3D8R, CAX4R, CGAX4R, CPEG4R, CPE4R, CPS4R, M3D4R, S4R, SC8R AND THEIR HYBRID, THERMAL AND PRESSURE COUNTERPARTS WHEREVER APPLICABLE. IT IS ALSO RELEVANT FOR ALL TYPES OF MODIFIED TRIANGULAR AND TETRAHEDRAL ELEMENTS. THIS WARNING CAN BE IGNORED IF THE FEATURE IS APPLIED TO THESE ELEMENT TYPES ONLY.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '33 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'STRAIN OUTPUT REQUEST LE IS NOT VALID FOR SOME ELEMENTS IN THIS ANALYSIS. THIS REQUEST IS SWITCHED TO THE STRAIN MEASURE, E.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OUTPUT REQUEST CF HAS BEEN REMOVED AS THERE ARE NO APPLICABLE LOADS IN THIS STEP', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_COMPOSITE\\09_CONINUM_SHELL\\HASIN_FAILURE_COMPOSITE.odb', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 13684, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'memory': 406.0})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 65210.0, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 35.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.001, 
+    'attempts': 1, 'timeIncrement': 0.001, 'increment': 1, 'stepTime': 0.001, 
+    'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 
+    'iterations': 3, 'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.002, 
+    'attempts': 1, 'timeIncrement': 0.001, 'increment': 2, 'stepTime': 0.002, 
+    'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.0035, 
+    'attempts': 1, 'timeIncrement': 0.0015, 'increment': 3, 'stepTime': 0.0035, 
+    'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.00575, 
+    'attempts': 1, 'timeIncrement': 0.00225, 'increment': 4, 
+    'stepTime': 0.00575, 'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.009125, 
+    'attempts': 1, 'timeIncrement': 0.003375, 'increment': 5, 
+    'stepTime': 0.009125, 'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.01, 
+    'attempts': 1, 'timeIncrement': 0.000875, 'increment': 6, 'stepTime': 0.01, 
+    'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.01759375, 
+    'attempts': 1, 'timeIncrement': 0.00759375, 'increment': 7, 
+    'stepTime': 0.01759375, 'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.02, 
+    'attempts': 1, 'timeIncrement': 0.00240625, 'increment': 8, 
+    'stepTime': 0.02, 'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 2, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.03, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 9, 'stepTime': 0.03, 
+    'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 3, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.04, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 10, 'stepTime': 0.04, 
+    'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 
+    'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 4, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.05, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 11, 'stepTime': 0.05, 
+    'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 
+    'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 5, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.06, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 12, 'stepTime': 0.06, 
+    'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 
+    'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 6, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.07, 
+    'attempts': 1, 'timeIncrement': 0.00999999999999999, 'increment': 13, 
+    'stepTime': 0.07, 'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 7, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.08, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 14, 'stepTime': 0.08, 
+    'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 
+    'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 8, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.09, 
+    'attempts': 1, 'timeIncrement': 0.01, 'increment': 15, 'stepTime': 0.09, 
+    'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 
+    'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 9, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.1, 
+    'attempts': 1, 'timeIncrement': 0.00999999999999999, 'increment': 16, 
+    'stepTime': 0.1, 'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'severe': 0, 'iterations': 4, 'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 10, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 12 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 8 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 25 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 99 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 384 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 434 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 437 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1309 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1325 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 558 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1541 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 123 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2800 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 311 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 590 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1576 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.1, 
+    'attempts': ' 1U', 'timeIncrement': 0.01, 'increment': 17, 'stepTime': 0.1, 
+    'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 
+    'iterations': 16, 'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 8 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 8 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.1025, 
+    'attempts': 2, 'timeIncrement': 0.0025, 'increment': 17, 
+    'stepTime': 0.1025, 'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 8 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 10 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 10 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 10 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 11 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 14 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 35 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3178 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 245 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1565 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 378 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1898 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 619 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1176 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 694 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 782 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.1025, 
+    'attempts': ' 1U', 'timeIncrement': 0.00375, 'increment': 18, 
+    'stepTime': 0.1025, 'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'severe': 0, 'iterations': 16, 'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 8 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.1034375, 
+    'attempts': 2, 'timeIncrement': 0.000937500000000001, 'increment': 18, 
+    'stepTime': 0.1034375, 'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 6 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 6 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.10484375, 
+    'attempts': 1, 'timeIncrement': 0.00140625, 'increment': 19, 
+    'stepTime': 0.10484375, 'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 10 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 16 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 10 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 9 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 13 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 44 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 112 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 294 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2865 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 694 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 869 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1247 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1290 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 879 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 882 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1362 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {'totalTime': 0.10484375, 
+    'attempts': ' 1U', 'timeIncrement': 0.002109375, 'increment': 20, 
+    'stepTime': 0.10484375, 'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'severe': 0, 'iterations': 16, 'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 6 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 6 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.10537109375, 'attempts': 2, 
+    'timeIncrement': 0.000527343750000001, 'increment': 20, 
+    'stepTime': 0.10537109375, 'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'severe': 0, 'iterations': 2, 'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.10537109375, 'attempts': ' 1U', 
+    'timeIncrement': 0.000791015625000001, 'increment': 21, 
+    'stepTime': 0.10537109375, 'step': 1, 'jobName': 'HASIN_FAILURE_COMPOSITE', 
+    'severe': 0, 'iterations': 16, 'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.10556884765625, 'attempts': 2, 
+    'timeIncrement': 0.00019775390625, 'increment': 21, 
+    'stepTime': 0.10556884765625, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.105865478515625, 'attempts': 1, 
+    'timeIncrement': 0.000296630859375, 'increment': 22, 
+    'stepTime': 0.105865478515625, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.106310424804687, 'attempts': 1, 
+    'timeIncrement': 0.000444946289062501, 'increment': 23, 
+    'stepTime': 0.106310424804687, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 6 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 5 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 7 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 64 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 98 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 131 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1185 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 569 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1287 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 838 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 139 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1369 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 468 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.106310424804687, 'attempts': ' 1U', 
+    'timeIncrement': 0.000667419433593751, 'increment': 24, 
+    'stepTime': 0.106310424804687, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 16, 
+    'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.106477279663086, 'attempts': 2, 
+    'timeIncrement': 0.000166854858398438, 'increment': 24, 
+    'stepTime': 0.106477279663086, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.106727561950684, 'attempts': 1, 
+    'timeIncrement': 0.000250282287597657, 'increment': 25, 
+    'stepTime': 0.106727561950684, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.10710298538208, 'attempts': 1, 
+    'timeIncrement': 0.000375423431396485, 'increment': 26, 
+    'stepTime': 0.10710298538208, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.107666120529175, 'attempts': 1, 
+    'timeIncrement': 0.000563135147094727, 'increment': 27, 
+    'stepTime': 0.107666120529175, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.108510823249817, 'attempts': 1, 
+    'timeIncrement': 0.000844702720642091, 'increment': 28, 
+    'stepTime': 0.108510823249817, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 4, 
+    'phase': STANDARD_PHASE, 'equilibrium': 4})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 6 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 11 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 14 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 217 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 414 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 597 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 917 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 725 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1487 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 391 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1693 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 529 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1283 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 354 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1130 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 139 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.108510823249817, 'attempts': ' 1U', 
+    'timeIncrement': 0.00148917675018309, 'increment': 29, 
+    'stepTime': 0.108510823249817, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 16, 
+    'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.108883117437363, 'attempts': 2, 
+    'timeIncrement': 0.000372294187545773, 'increment': 29, 
+    'stepTime': 0.108883117437363, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 3, 
+    'phase': STANDARD_PHASE, 'equilibrium': 3})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 2 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 6 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 4 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 15 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 35 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 26 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 101 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 208 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 1134 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 354 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 992 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 54 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.108883117437363, 'attempts': ' 1U', 
+    'timeIncrement': 0.000558441281318659, 'increment': 30, 
+    'stepTime': 0.108883117437363, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 16, 
+    'phase': STANDARD_PHASE, 'equilibrium': 16})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.109022727757692, 'attempts': 2, 
+    'timeIncrement': 0.000139610320329665, 'increment': 30, 
+    'stepTime': 0.109022727757692, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(STATUS, {
+    'totalTime': 0.109232143238187, 'attempts': 1, 
+    'timeIncrement': 0.000209415480494497, 'increment': 31, 
+    'stepTime': 0.109232143238187, 'step': 1, 
+    'jobName': 'HASIN_FAILURE_COMPOSITE', 'severe': 0, 'iterations': 2, 
+    'phase': STANDARD_PHASE, 'equilibrium': 2})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 3 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 5 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+mdb.jobs['HASIN_FAILURE_COMPOSITE']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'The system matrix has 8 negative eigenvalues.', 
+    'jobName': 'HASIN_FAILURE_COMPOSITE'})
+# Save by jhseo on 2022_10_01-15.26.12; build 2022.HF2 2022_03_21-08.37.34 176360
