@@ -2,13 +2,13 @@
 Repository for sharing the example cases for composite and fatigue analyses using Abaqus/Standard/Explicit/CAE, and FE-Safe.
 
 # Examples:
-**Progressive Damage Analysis, Composite**
+**Progressive Damage Analysis, Composite: Abaqus/Explicit**
 ![plot](01_COMPOSITE_ANALYSIS/05_FUSELAGE_COMPOSITE_PROGRESSIVE_FAIL/FUSELAGE_PROGRESSIVE_DAMAGE.JPG)
 
-**Landig Gear - Multiload: FE-Safe**
+**Landig Gear - Multiload, Al Alloy: FE-Safe**
 ![plot](02_FATIGUE_ANALYSIS/03_LANDING_GEAR_MULTI_LOADS/LANDING_GEAR_MULTI_LOAD.JPG)
 
-**Fiber Broken - Continum Shell & Hashin Criteria**
+**Fiber Broken using Continum Shell, Composite & Hashin Criteria**
 ![plot](01_COMPOSITE_ANALYSIS/04_HASHIN_CRITERIA_FIBER_DMAGE_CONTINUM_SHELL/FIBER_FAILURE.JPG)
 
 **Composite Failure: Subroutine-USDFLD**
