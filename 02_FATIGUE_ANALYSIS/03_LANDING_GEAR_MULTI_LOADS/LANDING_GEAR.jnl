@@ -1,0 +1,1148 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=5.0)
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(0.2, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(0.1, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], radius=0.2, 
+    textPoint=(0.354732394218445, 0.362971365451813))
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], radius=0.1, 
+    textPoint=(-0.354732513427734, 0.267392694950104))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='CYLINDER', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['CYLINDER'].BaseSolidExtrude(depth=0.8, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Model-1'].parts['CYLINDER'].features['Solid extrude-1'].sketch)
+mdb.models['Model-1'].parts['CYLINDER'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__edit__'], 
+    upToFeature=
+    mdb.models['Model-1'].parts['CYLINDER'].features['Solid extrude-1'])
+mdb.models['Model-1'].sketches['__edit__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__edit__'].dimensions[1], ))
+mdb.models['Model-1'].sketches['__edit__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[3], radius=0.05, 
+    textPoint=(-0.230012789368629, 0.124775648117065))
+mdb.models['Model-1'].sketches['__edit__'].dimensions[0].setValues(value=1)
+mdb.models['Model-1'].sketches['__edit__'].dimensions[0].setValues(value=0.1)
+mdb.models['Model-1'].parts['CYLINDER'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['Model-1'].sketches['__edit__'])
+del mdb.models['Model-1'].sketches['__edit__']
+mdb.models['Model-1'].parts['CYLINDER'].regenerate()
+mdb.models['Model-1'].parts['CYLINDER'].regenerate()
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=5.0)
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(0.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(0.0, 0.4))
+mdb.models['Model-1'].sketches['__profile__'].Spot(point=(0.5, 0.5))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.4), point2=(
+    0.5, 0.5))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.4), point2=(
+    0.0, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    0.5, 0.4))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.5, 0.4), point2=(
+    0.5, 0.5))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.075, 0.35), 
+    point2=(0.075, 0.15))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].FixedConstraint(entity=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0])
+mdb.models['Model-1'].sketches['__profile__'].DistanceDimension(entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], textPoint=(
+    0.0454785823822021, -0.230981767177582), value=0.05)
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    -0.150079131126404, 0.0261703729629517), value=0.1, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[11], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0])
+mdb.models['Model-1'].sketches['__profile__'].FixedConstraint(entity=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    -0.22284471988678, 0.353868544101715), value=0.1, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[10])
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    -0.313801884651184, 0.383452594280243), value=0.05, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[10], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].sketches['__profile__'].offset(distance=0.05, objectList=
+    (mdb.models['Model-1'].sketches['__profile__'].geometry[2], ), side=RIGHT)
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].dimensions[2], ))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.05, 0.35), point2=
+    (0.05, 0.475000000046566))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[8])
+mdb.models['Model-1'].sketches['__profile__'].ParallelConstraint(addUndoState=
+    False, entity1=mdb.models['Model-1'].sketches['__profile__'].geometry[6], 
+    entity2=mdb.models['Model-1'].sketches['__profile__'].geometry[8])
+mdb.models['Model-1'].sketches['__profile__'].offset(distance=0.05, objectList=
+    (mdb.models['Model-1'].sketches['__profile__'].geometry[4], ), side=LEFT)
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9], point1=(
+    0.0250132083892822, 0.0807867050170898))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[10], point1=(
+    -0.0272870063781738, 0.0603055357933044))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7], point1=(
+    0.0250132083892822, 0.360695660114288))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8], point1=(
+    0.0488602444529533, 0.454896211624146))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[13], point1=(
+    0.0521979853510857, 0.391431152820587))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.4614018201828, 
+    0.518154859542847), point2=(0.4614018201828, 0.324999999976717))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[15])
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    0.478080868721008, 0.543590009212494), value=0.05, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[24], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[15], point1=(
+    0.455047905445099, 0.46728441119194))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[12], point1=(
+    0.476492404937744, 0.449002861976624))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[11], point1=(
+    0.460607588291168, 0.432310998439789))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[17], point1=(
+    0.451870977878571, 0.404491245746613))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[22], point1=(
+    0.450282514095306, 0.33454442024231))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[16], point1=(
+    0.451076686382294, 0.509411454200745))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[19], point1=(
+    0.505886912345886, 0.450663626194))
+mdb.models['Model-1'].sketches['__profile__'].autoTrimCurve(curve1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], point1=(
+    0.0498376600444317, 0.101712316274643))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='BRACE', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['BRACE'].BaseSolidExtrude(depth=0.05, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.03, name='__profile__', 
+    sheetSize=1.41, transform=
+    mdb.models['Model-1'].parts['BRACE'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['BRACE'].faces[1], 
+    sketchPlaneSide=SIDE1, 
+    sketchUpEdge=mdb.models['Model-1'].parts['BRACE'].edges[6], 
+    sketchOrientation=RIGHT, origin=(0.5, 0.45, 0.025)))
+mdb.models['Model-1'].parts['BRACE'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(0.06, -0.015))
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], radius=0.05, 
+    textPoint=(-0.0802189096808434, 0.0596288919448852))
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['BRACE'].Round(edgeList=(
+    mdb.models['Model-1'].parts['BRACE'].edges[0], 
+    mdb.models['Model-1'].parts['BRACE'].edges[2], 
+    mdb.models['Model-1'].parts['BRACE'].edges[12], 
+    mdb.models['Model-1'].parts['BRACE'].edges[14], 
+    mdb.models['Model-1'].parts['BRACE'].edges[19], 
+    mdb.models['Model-1'].parts['BRACE'].edges[21]), radius=0.007)
+del mdb.models['Model-1'].parts['BRACE'].features['Round-1']
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.03, name='__profile__', 
+    sheetSize=1.41, transform=
+    mdb.models['Model-1'].parts['BRACE'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['BRACE'].faces[1], 
+    sketchPlaneSide=SIDE1, 
+    sketchUpEdge=mdb.models['Model-1'].parts['BRACE'].edges[6], 
+    sketchOrientation=RIGHT, origin=(0.5, 0.45, 0.025)))
+mdb.models['Model-1'].parts['BRACE'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(0.06, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], radius=0.06, 
+    textPoint=(-0.101671925187111, 0.0202053070068359))
+mdb.models['Model-1'].parts['BRACE'].SolidExtrude(depth=0.01, 
+    flipExtrudeDirection=OFF, sketch=
+    mdb.models['Model-1'].sketches['__profile__'], sketchOrientation=RIGHT, 
+    sketchPlane=mdb.models['Model-1'].parts['BRACE'].faces[1], sketchPlaneSide=
+    SIDE1, sketchUpEdge=mdb.models['Model-1'].parts['BRACE'].edges[6])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.008, name='__profile__', 
+    sheetSize=0.34, transform=
+    mdb.models['Model-1'].parts['BRACE'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['BRACE'].faces[2], 
+    sketchPlaneSide=SIDE1, 
+    sketchUpEdge=mdb.models['Model-1'].parts['BRACE'].edges[25], 
+    sketchOrientation=RIGHT, origin=(0.51, 0.45, 0.025)))
+mdb.models['Model-1'].sketches['__profile__'].sketchOptions.setValues(
+    decimalPlaces=3)
+mdb.models['Model-1'].parts['BRACE'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(0.06, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(0.04, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], radius=0.02, 
+    textPoint=(-0.0911935552954674, 0.023840057849884))
+mdb.models['Model-1'].sketches['__profile__'].dimensions[0].setValues(value=
+    0.04)
+mdb.models['Model-1'].parts['BRACE'].SolidExtrude(depth=0.05, 
+    flipExtrudeDirection=OFF, sketch=
+    mdb.models['Model-1'].sketches['__profile__'], sketchOrientation=RIGHT, 
+    sketchPlane=mdb.models['Model-1'].parts['BRACE'].faces[2], sketchPlaneSide=
+    SIDE1, sketchUpEdge=mdb.models['Model-1'].parts['BRACE'].edges[25])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['BRACE'].Round(edgeList=(
+    mdb.models['Model-1'].parts['BRACE'].edges[8], 
+    mdb.models['Model-1'].parts['BRACE'].edges[9], 
+    mdb.models['Model-1'].parts['BRACE'].edges[11], 
+    mdb.models['Model-1'].parts['BRACE'].edges[13], 
+    mdb.models['Model-1'].parts['BRACE'].edges[16], 
+    mdb.models['Model-1'].parts['BRACE'].edges[17], 
+    mdb.models['Model-1'].parts['BRACE'].edges[18], 
+    mdb.models['Model-1'].parts['BRACE'].edges[20], 
+    mdb.models['Model-1'].parts['BRACE'].edges[21], 
+    mdb.models['Model-1'].parts['BRACE'].edges[22], 
+    mdb.models['Model-1'].parts['BRACE'].edges[23], 
+    mdb.models['Model-1'].parts['BRACE'].edges[24], 
+    mdb.models['Model-1'].parts['BRACE'].edges[25], 
+    mdb.models['Model-1'].parts['BRACE'].edges[26], 
+    mdb.models['Model-1'].parts['BRACE'].edges[27], 
+    mdb.models['Model-1'].parts['BRACE'].edges[28], 
+    mdb.models['Model-1'].parts['BRACE'].edges[29]), radius=0.01)
+#* Round feature failed
+mdb.models['Model-1'].parts['BRACE'].Round(edgeList=(
+    mdb.models['Model-1'].parts['BRACE'].edges[8], 
+    mdb.models['Model-1'].parts['BRACE'].edges[9], 
+    mdb.models['Model-1'].parts['BRACE'].edges[11], 
+    mdb.models['Model-1'].parts['BRACE'].edges[13], 
+    mdb.models['Model-1'].parts['BRACE'].edges[16], 
+    mdb.models['Model-1'].parts['BRACE'].edges[17], 
+    mdb.models['Model-1'].parts['BRACE'].edges[18], 
+    mdb.models['Model-1'].parts['BRACE'].edges[20], 
+    mdb.models['Model-1'].parts['BRACE'].edges[21], 
+    mdb.models['Model-1'].parts['BRACE'].edges[22], 
+    mdb.models['Model-1'].parts['BRACE'].edges[23], 
+    mdb.models['Model-1'].parts['BRACE'].edges[24], 
+    mdb.models['Model-1'].parts['BRACE'].edges[25], 
+    mdb.models['Model-1'].parts['BRACE'].edges[26], 
+    mdb.models['Model-1'].parts['BRACE'].edges[27], 
+    mdb.models['Model-1'].parts['BRACE'].edges[28], 
+    mdb.models['Model-1'].parts['BRACE'].edges[29]), radius=0.005)
+mdb.models['Model-1'].parts['BRACE'].Round(edgeList=(
+    mdb.models['Model-1'].parts['BRACE'].edges[75], ), radius=0.01)
+mdb.models['Model-1'].parts['BRACE'].Round(edgeList=(
+    mdb.models['Model-1'].parts['BRACE'].edges[3], ), radius=0.01)
+mdb.models['Model-1'].parts['BRACE'].features['Round-3'].setValues(radius=
+    0.005)
+mdb.models['Model-1'].parts['BRACE'].regenerate()
+mdb.models['Model-1'].parts['BRACE'].regenerate()
+mdb.models['Model-1'].parts['BRACE'].Round(edgeList=(
+    mdb.models['Model-1'].parts['BRACE'].edges[5], 
+    mdb.models['Model-1'].parts['BRACE'].edges[9]), radius=0.005)
+mdb.models['Model-1'].parts['BRACE'].features['Round-4'].setValues(radius=
+    0.001)
+mdb.models['Model-1'].parts['BRACE'].regenerate()
+#* FeatureError: Regeneration failed
+mdb.models['Model-1'].parts['BRACE'].regenerate()
+del mdb.models['Model-1'].parts['BRACE'].features['Round-4']
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Model-1'].parts['CYLINDER'].features['Solid extrude-1'].sketch)
+mdb.models['Model-1'].parts['CYLINDER'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__edit__'], 
+    upToFeature=
+    mdb.models['Model-1'].parts['CYLINDER'].features['Solid extrude-1'])
+mdb.models['Model-1'].sketches['__edit__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__edit__'].geometry[3], ))
+mdb.models['Model-1'].parts['CYLINDER'].features['Solid extrude-1'].setValues(
+    sketch=mdb.models['Model-1'].sketches['__edit__'])
+del mdb.models['Model-1'].sketches['__edit__']
+mdb.models['Model-1'].parts['CYLINDER'].features['Solid extrude-1'].setValues(
+    depth=0.4)
+mdb.models['Model-1'].parts['CYLINDER'].regenerate()
+mdb.models['Model-1'].parts['CYLINDER'].regenerate()
+mdb.models['Model-1'].parts['CYLINDER'].DatumPlaneByPrincipalPlane(offset=0.0, 
+    principalPlane=XYPLANE)
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.04, name='__profile__', 
+    sheetSize=1.95, transform=
+    mdb.models['Model-1'].parts['CYLINDER'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['CYLINDER'].datums[2], 
+    sketchPlaneSide=SIDE1, 
+    sketchUpEdge=mdb.models['Model-1'].parts['CYLINDER'].edges[0], 
+    sketchOrientation=RIGHT, origin=(0.0, 0.0, 0.0)))
+mdb.models['Model-1'].parts['CYLINDER'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(0.1, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(0.04, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4], radius=0.05, 
+    textPoint=(-0.199605286121368, 0.0274857059121132))
+mdb.models['Model-1'].parts['CYLINDER'].SolidExtrude(depth=0.4, 
+    flipExtrudeDirection=OFF, sketch=
+    mdb.models['Model-1'].sketches['__profile__'], sketchOrientation=RIGHT, 
+    sketchPlane=mdb.models['Model-1'].parts['CYLINDER'].datums[2], 
+    sketchPlaneSide=SIDE1, sketchUpEdge=
+    mdb.models['Model-1'].parts['CYLINDER'].edges[0])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['CYLINDER'].features['Solid extrude-2'].setValues(
+    flipExtrudeDirection=True)
+mdb.models['Model-1'].parts['CYLINDER'].regenerate()
+mdb.models['Model-1'].parts['CYLINDER'].regenerate()
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=5.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(0.3, 0.3))
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    -0.311527967453003, 0.137678802013397), value=0.1, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    0.129613876342773, 0.0193432569503784), value=0.1, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0])
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='HINGE', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['HINGE'].BaseSolidExtrude(depth=0.04, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.01, name='__profile__', 
+    sheetSize=0.63, transform=
+    mdb.models['Model-1'].parts['HINGE'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['HINGE'].faces[2], 
+    sketchPlaneSide=SIDE1, 
+    sketchUpEdge=mdb.models['Model-1'].parts['HINGE'].edges[9], 
+    sketchOrientation=RIGHT, origin=(0.1, 0.25, 0.02)))
+mdb.models['Model-1'].parts['HINGE'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.02, 0.05), 
+    point2=(-0.02, -0.05))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].ParallelConstraint(addUndoState=
+    False, entity1=mdb.models['Model-1'].sketches['__profile__'].geometry[2], 
+    entity2=mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.02, -0.05), 
+    point2=(-0.03, -0.05))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.03, -0.05), 
+    point2=(-0.08, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.08, 0.0), point2=
+    (-0.03, 0.05))
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.03, 0.05), 
+    point2=(-0.02, 0.05))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[10])
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9], 
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8]))
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    -0.06, 0.0), point1=(-0.03, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[11], ))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.03, 0.05), 
+    point2=(-0.04, 0.05))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[12])
+mdb.models['Model-1'].sketches['__profile__'].ParallelConstraint(addUndoState=
+    False, entity1=mdb.models['Model-1'].sketches['__profile__'].geometry[10], 
+    entity2=mdb.models['Model-1'].sketches['__profile__'].geometry[12])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.03, -0.05), 
+    point2=(-0.04, -0.05))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[13])
+mdb.models['Model-1'].sketches['__profile__'].ParallelConstraint(addUndoState=
+    False, entity1=mdb.models['Model-1'].sketches['__profile__'].geometry[7], 
+    entity2=mdb.models['Model-1'].sketches['__profile__'].geometry[13])
+mdb.models['Model-1'].sketches['__profile__'].ArcByCenterEnds(center=(-0.04, 
+    0.0), direction=COUNTERCLOCKWISE, point1=(-0.04, 0.05), point2=(-0.04, 
+    -0.05))
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    -0.06, 0.0), point1=(-0.03, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    -0.05, 0.0), point1=(-0.03, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.03, 0.05), 
+    point2=(-0.07, 0.03))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(-0.03, -0.05), 
+    point2=(-0.07, -0.03))
+mdb.models['Model-1'].sketches['__profile__'].Arc3Points(point1=(-0.07, 0.03), 
+    point2=(-0.07, -0.03), point3=(-0.085, -0.005))
+mdb.models['Model-1'].parts['HINGE'].SolidExtrude(depth=0.005, 
+    flipExtrudeDirection=ON, sketch=
+    mdb.models['Model-1'].sketches['__profile__'], sketchOrientation=RIGHT, 
+    sketchPlane=mdb.models['Model-1'].parts['HINGE'].faces[2], sketchPlaneSide=
+    SIDE1, sketchUpEdge=mdb.models['Model-1'].parts['HINGE'].edges[9])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['HINGE'].features['Solid extrude-2'].setValues(
+    depth=0.008)
+mdb.models['Model-1'].parts['HINGE'].regenerate()
+mdb.models['Model-1'].parts['HINGE'].features['Solid extrude-2'].setValues(
+    depth=0.01)
+mdb.models['Model-1'].parts['HINGE'].regenerate()
+mdb.models['Model-1'].parts['HINGE'].regenerate()
+mdb.models['Model-1'].ConstrainedSketch(gridSpacing=0.007, name='__profile__', 
+    sheetSize=0.293, transform=
+    mdb.models['Model-1'].parts['HINGE'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-1'].parts['HINGE'].faces[6], 
+    sketchPlaneSide=SIDE1, 
+    sketchUpEdge=mdb.models['Model-1'].parts['HINGE'].edges[16], 
+    sketchOrientation=RIGHT, origin=(0.0, 0.25, 0.02)))
+mdb.models['Model-1'].sketches['__profile__'].sketchOptions.setValues(
+    decimalPlaces=3)
+mdb.models['Model-1'].parts['HINGE'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__profile__'])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.02, 0.05), point2=
+    (0.0297499999934807, 0.05))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0297499999934807, 
+    0.05), point2=(0.07, 0.02975))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.02, 0.05), point2=
+    (0.02, -0.05))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[8])
+mdb.models['Model-1'].sketches['__profile__'].ParallelConstraint(addUndoState=
+    False, entity1=mdb.models['Model-1'].sketches['__profile__'].geometry[2], 
+    entity2=mdb.models['Model-1'].sketches['__profile__'].geometry[8])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.02, -0.05), 
+    point2=(0.0297499999934807, -0.05))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0297499999934807, 
+    -0.05), point2=(0.07, -0.02975))
+mdb.models['Model-1'].sketches['__profile__'].Arc3Points(point1=(0.07, 0.02975)
+    , point2=(0.07, -0.02975), point3=(0.08225, -0.014))
+mdb.models['Model-1'].parts['HINGE'].SolidExtrude(depth=0.01, 
+    flipExtrudeDirection=OFF, sketch=
+    mdb.models['Model-1'].sketches['__profile__'], sketchOrientation=RIGHT, 
+    sketchPlane=mdb.models['Model-1'].parts['HINGE'].faces[6], sketchPlaneSide=
+    SIDE1, sketchUpEdge=mdb.models['Model-1'].parts['HINGE'].edges[16])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['HINGE'].features['Solid extrude-3'].setValues(
+    flipExtrudeDirection=True)
+mdb.models['Model-1'].parts['HINGE'].regenerate()
+mdb.models['Model-1'].parts['HINGE'].regenerate()
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Model-1'].parts['HINGE'].features['Solid extrude-2'].sketch)
+mdb.models['Model-1'].parts['HINGE'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__edit__'], 
+    upToFeature=
+    mdb.models['Model-1'].parts['HINGE'].features['Solid extrude-2'])
+mdb.models['Model-1'].sketches['__edit__'].DistanceDimension(entity1=
+    mdb.models['Model-1'].sketches['__edit__'].vertices[9], entity2=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[2], textPoint=(
+    -0.0364898662269115, 0.0250552594661713), value=0.03)
+mdb.models['Model-1'].parts['HINGE'].features['Solid extrude-2'].setValues(
+    sketch=mdb.models['Model-1'].sketches['__edit__'])
+del mdb.models['Model-1'].sketches['__edit__']
+mdb.models['Model-1'].parts['HINGE'].regenerate()
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Model-1'].parts['HINGE'].features['Solid extrude-3'].sketch)
+mdb.models['Model-1'].parts['HINGE'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__edit__'], 
+    upToFeature=
+    mdb.models['Model-1'].parts['HINGE'].features['Solid extrude-3'])
+mdb.models['Model-1'].sketches['__edit__'].CircleByCenterPerimeter(center=(
+    0.056, 0.0), point1=(0.07, 0.0))
+mdb.models['Model-1'].sketches['__edit__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[15], radius=0.02, 
+    textPoint=(0.0923956590890884, 0.0337938964366913))
+mdb.models['Model-1'].sketches['__edit__'].DistanceDimension(entity1=
+    mdb.models['Model-1'].sketches['__edit__'].vertices[9], entity2=
+    mdb.models['Model-1'].sketches['__edit__'].geometry[2], textPoint=(
+    0.0479176598787308, 0.0438979268074036), value=0.03)
+mdb.models['Model-1'].parts['HINGE'].features['Solid extrude-3'].setValues(
+    sketch=mdb.models['Model-1'].sketches['__edit__'])
+del mdb.models['Model-1'].sketches['__edit__']
+mdb.models['Model-1'].parts['HINGE'].regenerate()
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='BRACE-1', part=
+    mdb.models['Model-1'].parts['BRACE'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='CYLINDER-1', 
+    part=mdb.models['Model-1'].parts['CYLINDER'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='HINGE-1', part=
+    mdb.models['Model-1'].parts['HINGE'])
+mdb.models['Model-1'].rootAssembly.instances['CYLINDER-1'].translate(vector=(
+    0.692, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.instances['HINGE-1'].translate(vector=(
+    0.812000000000001, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='BRACE-2', part=
+    mdb.models['Model-1'].parts['BRACE'])
+mdb.models['Model-1'].rootAssembly.instances['BRACE-2'].translate(vector=(
+    1.0136, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('CYLINDER-1', ), 
+    vector=(-0.692, 0.0, -0.4))
+mdb.models['Model-1'].rootAssembly.DatumPlaneByPrincipalPlane(offset=0.08, 
+    principalPlane=YZPLANE)
+mdb.models['Model-1'].rootAssembly.DatumPlaneByPrincipalPlane(offset=-0.08, 
+    principalPlane=YZPLANE)
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(0.8, 0.0, 
+    0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(0.008, 0.0, 
+    0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(0.08, 0.0, 
+    0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(-0.08, 0.0, 
+    0.0))
+mdb.models['Model-1'].rootAssembly.rotate(angle=90.0, axisDirection=(0.2, 0.0, 
+    0.0), axisPoint=(-0.1, 0.0, 0.0), instanceList=('BRACE-1', ))
+mdb.models['Model-1'].rootAssembly.rotate(angle=90.0, axisDirection=(0.2, 0.0, 
+    0.0), axisPoint=(-0.1, 0.0, 0.0), instanceList=('BRACE-2', ))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('BRACE-1', ), 
+    vector=(0.08, 0.025, -0.4))
+mdb.models['Model-1'].rootAssembly.rotate(angle=180.0, axisDirection=(0.0, 0.0, 
+    -0.4), axisPoint=(1.0136, -0.025, 0.4), instanceList=('BRACE-2', ))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('BRACE-2', ), 
+    vector=(-1.0936, 0.025, -0.4))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('CYLINDER-1', ), 
+    vector=(0.0, 0.0, 0.02))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(0.0, 0.08, 
+    -0.6))
+mdb.models['Model-1'].rootAssembly.rotate(angle=90.0, axisDirection=(0.1, 0.0, 
+    0.0), axisPoint=(0.812, 0.2, 0.0), instanceList=('HINGE-1', ))
+mdb.models['Model-1'].rootAssembly.rotate(angle=180.0, axisDirection=(0.0, 0.0, 
+    -0.1), axisPoint=(0.862, 0.2, 0.1), instanceList=('HINGE-1', ))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('HINGE-1', ), 
+    vector=(-0.862, -0.12, -0.7))
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='HINGE-2', part=
+    mdb.models['Model-1'].parts['HINGE'])
+mdb.models['Model-1'].rootAssembly.instances['HINGE-2'].translate(vector=(0.0, 
+    0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('HINGE-1', ), 
+    vector=(0.0, 0.0, 0.05))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(0.0, -0.08, 
+    -0.4))
+mdb.models['Model-1'].rootAssembly.rotate(angle=90.0, axisDirection=(0.1, 0.0, 
+    0.0), axisPoint=(0.0, 0.2, 0.0), instanceList=('HINGE-2', ))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('HINGE-2', ), 
+    vector=(-0.05, -0.28, -0.5))
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=5.0)
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(0.3, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 0.0), point1=(0.2, 0.0))
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], radius=0.12, 
+    textPoint=(0.491168141365051, 0.347041547298431))
+mdb.models['Model-1'].sketches['__profile__'].RadialDimension(curve=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], radius=0.09, 
+    textPoint=(0.343362927436829, 0.0238946080207825))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='OUTERlING', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['OUTERlING'].BaseSolidExtrude(depth=0.2, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].parts['OUTERlING'].features['Solid extrude-1'].setValues(
+    depth=0.1)
+mdb.models['Model-1'].parts['OUTERlING'].regenerate()
+mdb.models['Model-1'].parts['OUTERlING'].regenerate()
+mdb.models['Model-1'].parts['OUTERlING'].features['Solid extrude-1'].setValues(
+    depth=0.08)
+mdb.models['Model-1'].parts['OUTERlING'].regenerate()
+mdb.models['Model-1'].parts['OUTERlING'].regenerate()
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='OUTERlING-1', 
+    part=mdb.models['Model-1'].parts['OUTERlING'])
+mdb.models['Model-1'].rootAssembly.instances['OUTERlING-1'].translate(vector=(
+    0.944, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.DatumPointByCoordinate(coords=(0.0, 0.0, 
+    -0.68))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('OUTERlING-1', ), 
+    vector=(-0.944, 0.0, -0.76))
+mdb.models['Model-1'].Material(name='SAE4130')
+mdb.models['Model-1'].materials['SAE4130'].Density(table=((7850.0, ), ))
+mdb.models['Model-1'].materials['SAE4130'].Elastic(table=((220000000000.0, 
+    0.33), ))
+mdb.models['Model-1'].HomogeneousSolidSection(material='SAE4130', name=
+    'MAT_SEC', thickness=None)
+mdb.models['Model-1'].parts['OUTERlING'].Set(cells=
+    mdb.models['Model-1'].parts['OUTERlING'].cells.getSequenceFromMask((
+    '[#1 ]', ), ), name='RING')
+mdb.models['Model-1'].parts['OUTERlING'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['OUTERlING'].sets['RING'], sectionName=
+    'MAT_SEC', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['BRACE'].Set(cells=
+    mdb.models['Model-1'].parts['BRACE'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), name='BRACE')
+mdb.models['Model-1'].parts['BRACE'].SectionAssignment(offset=0.0, offsetField=
+    '', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['BRACE'].sets['BRACE'], sectionName='MAT_SEC', 
+    thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['CYLINDER'].Set(cells=
+    mdb.models['Model-1'].parts['CYLINDER'].cells.getSequenceFromMask(('[#1 ]', 
+    ), ), name='CYLINDER')
+mdb.models['Model-1'].parts['CYLINDER'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['CYLINDER'].sets['CYLINDER'], sectionName=
+    'MAT_SEC', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['HINGE'].Set(cells=
+    mdb.models['Model-1'].parts['HINGE'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), name='HINGE')
+mdb.models['Model-1'].parts['HINGE'].SectionAssignment(offset=0.0, offsetField=
+    '', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['HINGE'].sets['HINGE'], sectionName='MAT_SEC', 
+    thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.InstanceFromBooleanMerge(domain=GEOMETRY, 
+    instances=(mdb.models['Model-1'].rootAssembly.instances['BRACE-1'], 
+    mdb.models['Model-1'].rootAssembly.instances['CYLINDER-1'], 
+    mdb.models['Model-1'].rootAssembly.instances['HINGE-1'], 
+    mdb.models['Model-1'].rootAssembly.instances['BRACE-2'], 
+    mdb.models['Model-1'].rootAssembly.instances['HINGE-2'], 
+    mdb.models['Model-1'].rootAssembly.instances['OUTERlING-1']), name='ASSEM', 
+    originalInstances=SUPPRESS)
+mdb.models['Model-1'].parts['ASSEM'].Round(edgeList=(
+    mdb.models['Model-1'].parts['ASSEM'].edges[49], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[62], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[116], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[120], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[165], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[167], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[169], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[171]), radius=0.005)
+mdb.models['Model-1'].parts['ASSEM'].Round(edgeList=(
+    mdb.models['Model-1'].parts['ASSEM'].edges[67], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[68], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[69], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[70], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[71], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[72], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[73], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[74], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[75], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[94]), radius=0.005)
+mdb.models['Model-1'].parts['ASSEM'].Round(edgeList=(
+    mdb.models['Model-1'].parts['ASSEM'].edges[36], ), radius=0.008)
+mdb.models['Model-1'].parts['ASSEM'].Round(edgeList=(
+    mdb.models['Model-1'].parts['ASSEM'].edges[21], ), radius=0.008)
+del mdb.models['Model-1'].parts['ASSEM'].features['Round-4']
+del mdb.models['Model-1'].parts['ASSEM'].features['Round-3']
+mdb.models['Model-1'].parts['ASSEM'].regenerate()
+mdb.models['Model-1'].parts['ASSEM'].Round(edgeList=(
+    mdb.models['Model-1'].parts['ASSEM'].edges[43], ), radius=0.005)
+mdb.models['Model-1'].parts['ASSEM'].setMeshControls(regions=
+    mdb.models['Model-1'].parts['ASSEM'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), technique=SYSTEM_ASSIGN)
+mdb.models['Model-1'].parts['ASSEM'].setMeshControls(regions=
+    mdb.models['Model-1'].parts['ASSEM'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), technique=BOTTOM_UP)
+mdb.models['Model-1'].parts['ASSEM'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.002)
+mdb.models['Model-1'].parts['ASSEM'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.005)
+mdb.models['Model-1'].parts['ASSEM'].setMeshControls(elemShape=HEX_DOMINATED, 
+    regions=mdb.models['Model-1'].parts['ASSEM'].cells.getSequenceFromMask((
+    '[#1 ]', ), ), technique=SYSTEM_ASSIGN)
+mdb.models['Model-1'].parts['ASSEM'].setMeshControls(elemShape=HEX, regions=
+    mdb.models['Model-1'].parts['ASSEM'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), technique=SYSTEM_ASSIGN)
+mdb.models['Model-1'].parts['ASSEM'].PartitionCellByExtendFace(cells=
+    mdb.models['Model-1'].parts['ASSEM'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), extendFace=mdb.models['Model-1'].parts['ASSEM'].faces[2])
+mdb.models['Model-1'].parts['ASSEM'].PartitionCellByExtendFace(cells=
+    mdb.models['Model-1'].parts['ASSEM'].cells.getSequenceFromMask(('[#10 ]', 
+    ), ), extendFace=mdb.models['Model-1'].parts['ASSEM'].faces[7])
+#* Feature creation failed.
+mdb.models['Model-1'].parts['ASSEM'].PartitionCellByExtendFace(cells=
+    mdb.models['Model-1'].parts['ASSEM'].cells.getSequenceFromMask(('[#2 ]', ), 
+    ), extendFace=mdb.models['Model-1'].parts['ASSEM'].faces[28])
+mdb.models['Model-1'].parts['ASSEM'].deleteFeatures(('Round-1', 'Round-2', 
+    'Round-3', 'Partition cell-1', 'Partition cell-2'))
+mdb.models['Model-1'].parts['ASSEM'].setMeshControls(elemShape=TET, regions=
+    mdb.models['Model-1'].parts['ASSEM'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ), technique=FREE)
+mdb.models['Model-1'].parts['ASSEM'].setElementType(elemTypes=(ElemType(
+    elemCode=C3D20R, elemLibrary=STANDARD), ElemType(elemCode=C3D15, 
+    elemLibrary=STANDARD), ElemType(elemCode=C3D10, elemLibrary=STANDARD)), 
+    regions=(mdb.models['Model-1'].parts['ASSEM'].cells.getSequenceFromMask((
+    '[#1 ]', ), ), ))
+mdb.models['Model-1'].parts['ASSEM'].generateMesh()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].StaticLinearPerturbationStep(name='Step-1', previous=
+    'Initial')
+mdb.models['Model-1'].rootAssembly.ReferencePoint(point=(0.0, 0.0, -1.2))
+mdb.models['Model-1'].rootAssembly.Set(name='m_Set-1', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[25], ))
+mdb.models['Model-1'].rootAssembly.Surface(name='s_Surf-1', side1Faces=
+    mdb.models['Model-1'].rootAssembly.instances['ASSEM-1'].faces.getSequenceFromMask(
+    ('[#0:2 #80 ]', ), ))
+mdb.models['Model-1'].Coupling(alpha=0.0, controlPoint=
+    mdb.models['Model-1'].rootAssembly.sets['m_Set-1'], couplingType=KINEMATIC, 
+    influenceRadius=WHOLE_SURFACE, localCsys=None, name='Constraint-1', 
+    surface=mdb.models['Model-1'].rootAssembly.surfaces['s_Surf-1'], u1=ON, u2=
+    ON, u3=ON, ur1=ON, ur2=ON, ur3=ON)
+mdb.models['Model-1'].rootAssembly.Set(faces=
+    mdb.models['Model-1'].rootAssembly.instances['ASSEM-1'].faces.getSequenceFromMask(
+    ('[#0 #100000 #0 #1000 ]', ), ), name='Set-2')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'TOP', region=mdb.models['Model-1'].rootAssembly.sets['Set-2'], u1=0.0, u2=
+    0.0, u3=0.0, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['Model-1'].rootAssembly.Set(faces=
+    mdb.models['Model-1'].rootAssembly.instances['ASSEM-1'].faces.getSequenceFromMask(
+    ('[#4200 #10000000 #2 ]', ), ), name='Set-3')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'HINGE', region=mdb.models['Model-1'].rootAssembly.sets['Set-3'], u1=0.0, 
+    u2=0.0, u3=0.0, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.models['Model-1'].rootAssembly.Set(name='Set-4', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[25], ))
+mdb.models['Model-1'].ConcentratedForce(cf3=22550.0, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', localCsys=None, name='VERTICAL', 
+    region=mdb.models['Model-1'].rootAssembly.sets['Set-4'])
+mdb.models['Model-1'].rootAssembly.Set(name='Set-5', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[25], ))
+mdb.models['Model-1'].ConcentratedForce(cf2=-2400.0, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', localCsys=None, name='SIDE_FORCE_R', 
+    region=mdb.models['Model-1'].rootAssembly.sets['Set-5'])
+mdb.models['Model-1'].rootAssembly.Set(name='Set-6', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[25], ))
+mdb.models['Model-1'].ConcentratedForce(cf2=2400.0, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', localCsys=None, name='SIDE_FORCE_L', 
+    region=mdb.models['Model-1'].rootAssembly.sets['Set-6'])
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-2', side1Faces=
+    mdb.models['Model-1'].rootAssembly.instances['ASSEM-1'].faces.getSequenceFromMask(
+    ('[#0:2 #40 ]', ), ))
+mdb.models['Model-1'].Pressure(createStepName='Step-1', distributionType=
+    UNIFORM, field='', magnitude=26000000.0, name='HYDRO_STATIC', region=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-2'])
+mdb.models['Model-1'].rootAssembly.Set(name='Set-7', referencePoints=(
+    mdb.models['Model-1'].rootAssembly.referencePoints[25], ))
+mdb.models['Model-1'].ConcentratedForce(cf1=7200.0, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', localCsys=None, name='DRAG', region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-7'])
+mdb.models['Model-1'].steps['Step-1'].LoadCase(boundaryConditions=(('TOP', 
+    1.0), ), loads=(('DRAG', 0.5), ('HYDRO_STATIC', 0.800000011920929), (
+    'VERTICAL', 3.0)), name='LoadCase-1_VERT')
+mdb.models['Model-1'].steps['Step-1'].LoadCase(boundaryConditions=(('HINGE', 
+    1.0), ('TOP', 1.0)), loads=(('DRAG', 3.0), ('HYDRO_STATIC', 
+    0.200000002980232), ('SIDE_FORCE_R', 0.5), ('VERTICAL', 1.0)), name=
+    'LoadCase-2_DRAG')
+mdb.models['Model-1'].steps['Step-1'].LoadCase(boundaryConditions=(('HINGE', 
+    1.0), ('TOP', 1.0)), loads=(('HYDRO_STATIC', 0.300000011920929), (
+    'SIDE_FORCE_R', 3.0), ('VERTICAL', 0.300000011920929)), name=
+    'LoadCase-3_SIDE_R')
+mdb.models['Model-1'].steps['Step-1'].LoadCase(boundaryConditions=(('HINGE', 
+    1.0), ('TOP', 1.0)), loads=(('HYDRO_STATIC', 0.300000011920929), (
+    'SIDE_FORCE_L', 3.0), ('VERTICAL', 0.300000011920929)), name=
+    'LoadCase-4_SIDE_L')
+mdb.models['Model-1'].parts['ASSEM'].deleteMesh()
+mdb.models['Model-1'].parts['ASSEM'].deleteSeeds()
+mdb.models['Model-1'].parts['ASSEM'].Round(edgeList=(
+    mdb.models['Model-1'].parts['ASSEM'].edges[5], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[13], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[42], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[44], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[49], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[62], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[116], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[120], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[124], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[132], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[161], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[163], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[164], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[165], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[167], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[169], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[171]), radius=0.005)
+mdb.models['Model-1'].parts['ASSEM'].Round(edgeList=(
+    mdb.models['Model-1'].parts['ASSEM'].edges[16], 
+    mdb.models['Model-1'].parts['ASSEM'].edges[28]), radius=0.005)
+mdb.models['Model-1'].parts['ASSEM'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.02)
+mdb.models['Model-1'].parts['ASSEM'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.01)
+mdb.models['Model-1'].parts['ASSEM'].generateMesh()
+mdb.models['Model-1'].parts['ASSEM'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['ASSEM'].cells.getSequenceFromMask(('[#1 ]', ), 
+    ))
+mdb.models['Model-1'].parts['ASSEM'].seedEdgeByBias(biasMethod=DOUBLE, 
+    constraint=FINER, endEdges=
+    mdb.models['Model-1'].parts['ASSEM'].edges.getSequenceFromMask((
+    '[#4510602 #404421 #40000100 #6000000 ]', ), ), maxSize=0.00958493, 
+    minSize=0.00191699)
+mdb.models['Model-1'].parts['ASSEM'].generateMesh()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='LANDING_GEAR', nodalOutputPrecision=
+    SINGLE, numCpus=7, numDomains=7, numGPUs=1, numThreadsPerMpiProcess=1, 
+    queue=None, resultsFormat=ODB, scratch='', type=ANALYSIS, userSubroutine=''
+    , waitHours=0, waitMinutes=0)
+mdb.jobs['LANDING_GEAR'].submit(consistencyChecking=OFF)
+mdb.jobs['LANDING_GEAR']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '109 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_FATIGUE\\04_LANDING_GEAR\\LANDING_GEAR.odb', 
+    'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 27248, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'LANDING_GEAR', 'memory': 20364.0})
+mdb.jobs['LANDING_GEAR']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65210.0, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(MINIMUM_MEMORY, {'minimum_memory': 2058.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LANDING_GEAR'})
+mdb.models['Model-1'].parts['ASSEM'].deleteMesh()
+mdb.models['Model-1'].parts['ASSEM'].deleteSeeds()
+mdb.models['Model-1'].parts['ASSEM'].deleteSeeds(regions=
+    mdb.models['Model-1'].parts['ASSEM'].edges.getSequenceFromMask((
+    '[#ffffffff:9 #3fff ]', ), ))
+mdb.models['Model-1'].parts['ASSEM'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.02)
+mdb.models['Model-1'].parts['ASSEM'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.01)
+mdb.models['Model-1'].parts['ASSEM'].generateMesh()
+mdb.models['Model-1'].parts['ASSEM'].deleteMesh()
+mdb.models['Model-1'].parts['ASSEM'].deleteSeeds()
+mdb.models['Model-1'].parts['ASSEM'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.01)
+mdb.models['Model-1'].parts['ASSEM'].seedEdgeByNumber(constraint=FINER, edges=
+    mdb.models['Model-1'].parts['ASSEM'].edges.getSequenceFromMask((
+    '[#f00f00 #10514000 #0 #16080000 #0:2 #80000 #81 ]', ), ), number=20)
+mdb.models['Model-1'].parts['ASSEM'].seedEdgeByNumber(constraint=FINER, edges=
+    mdb.models['Model-1'].parts['ASSEM'].edges.getSequenceFromMask((
+    '[#0:4 #80040004 #40 ]', ), ), number=20)
+mdb.models['Model-1'].parts['ASSEM'].generateMesh()
+mdb.jobs['LANDING_GEAR']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Process terminated by external request (SIGTERM or SIGINT received).', 
+    'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(INTERRUPTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis interrupted by external signal', 
+    'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'LANDING_GEAR'})
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.jobs['LANDING_GEAR'].submit(consistencyChecking=OFF)
+mdb.jobs['LANDING_GEAR']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '70 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_FATIGUE\\04_LANDING_GEAR\\LANDING_GEAR.odb', 
+    'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 27600, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'LANDING_GEAR', 'memory': 14381.0})
+mdb.jobs['LANDING_GEAR']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65210.0, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(MINIMUM_MEMORY, {'minimum_memory': 1615.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(STATUS, {'totalTime': 0.0, 'attempts': 1, 
+    'timeIncrement': 2.22e-16, 'increment': 1, 'stepTime': 2.22e-16, 'step': 1, 
+    'jobName': 'LANDING_GEAR', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['LANDING_GEAR']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(JOB_COMPLETED, {
+    'time': 'Sat Oct  1 21:33:25 2022', 'jobName': 'LANDING_GEAR'})
+mdb.models['Model-1'].steps['Step-1'].loadCases['LoadCase-1_VERT'].setValues(
+    loads=(('DRAG', 0.5), ('HYDRO_STATIC', 0.800000011920929), ('VERTICAL', 
+    2.0)))
+mdb.models['Model-1'].steps['Step-1'].loadCases['LoadCase-2_DRAG'].setValues(
+    loads=(('DRAG', 2.0), ('HYDRO_STATIC', 0.200000002980232), ('SIDE_FORCE_R', 
+    0.5), ('VERTICAL', 1.0)))
+mdb.models['Model-1'].steps['Step-1'].loadCases['LoadCase-3_SIDE_R'].setValues(
+    loads=(('HYDRO_STATIC', 0.300000011920929), ('SIDE_FORCE_R', 2.0), (
+    'VERTICAL', 0.300000011920929)))
+mdb.models['Model-1'].steps['Step-1'].loadCases['LoadCase-4_SIDE_L'].setValues(
+    loads=(('HYDRO_STATIC', 0.300000011920929), ('SIDE_FORCE_L', 2.0), (
+    'VERTICAL', 0.300000011920929)))
+mdb.jobs['LANDING_GEAR'].submit(consistencyChecking=OFF)
+mdb.jobs['LANDING_GEAR']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '70 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_FATIGUE\\04_LANDING_GEAR\\LANDING_GEAR.odb', 
+    'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 33448, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'LANDING_GEAR', 'memory': 14381.0})
+mdb.jobs['LANDING_GEAR']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 65210.0, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(MINIMUM_MEMORY, {'minimum_memory': 1615.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 2, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 3, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 4, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(STATUS, {'totalTime': 0.0, 'attempts': 1, 
+    'timeIncrement': 2.22e-16, 'increment': 1, 'stepTime': 2.22e-16, 'step': 1, 
+    'jobName': 'LANDING_GEAR', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['LANDING_GEAR']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'LANDING_GEAR'})
+mdb.jobs['LANDING_GEAR']._Message(JOB_COMPLETED, {
+    'time': 'Sat Oct  1 21:37:16 2022', 'jobName': 'LANDING_GEAR'})
+# Save by jhseo on 2022_10_01-21.37.42; build 2022.HF2 2022_03_21-08.37.34 176360
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].steps['Step-1'].loadCases['LoadCase-1_VERT'].setValues(
+    loads=(('DRAG', 0.5), ('HYDRO_STATIC', 0.5), ('VERTICAL', 1.0)))
+mdb.models['Model-1'].steps['Step-1'].loadCases['LoadCase-2_DRAG'].setValues(
+    loads=(('DRAG', 1.0), ('HYDRO_STATIC', 0.200000002980232), ('SIDE_FORCE_R', 
+    0.5), ('VERTICAL', 0.800000011920929)))
+mdb.models['Model-1'].steps['Step-1'].loadCases['LoadCase-3_SIDE_R'].setValues(
+    loads=(('HYDRO_STATIC', 0.300000011920929), ('SIDE_FORCE_R', 1.0), (
+    'VERTICAL', 0.5)))
+mdb.models['Model-1'].steps['Step-1'].loadCases['LoadCase-4_SIDE_L'].setValues(
+    loads=(('HYDRO_STATIC', 0.300000011920929), ('SIDE_FORCE_L', 1.0), (
+    'VERTICAL', 0.300000011920929)))
+mdb.models['Model-1'].steps['Step-1'].loadCases['LoadCase-3_SIDE_R'].setValues(
+    )
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='LANDING_GEAR_MULTI_LOAD', 
+    nodalOutputPrecision=SINGLE, numCpus=7, numDomains=7, numGPUs=1, 
+    numThreadsPerMpiProcess=1, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['LANDING_GEAR_MULTI_LOAD'].submit(consistencyChecking=OFF)
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '70 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_FATIGUE\\04_LANDING_GEAR\\LANDING_GEAR_MULTI_LOAD.odb', 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 33524, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'LANDING_GEAR_MULTI_LOAD', 
+    'memory': 14381.0})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 65210.0, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 1615.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 1, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 2, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 3, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 4, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(STATUS, {'totalTime': 0.0, 
+    'attempts': 1, 'timeIncrement': 2.22e-16, 'increment': 1, 
+    'stepTime': 2.22e-16, 'step': 1, 'jobName': 'LANDING_GEAR_MULTI_LOAD', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(END_STEP, {
+    'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(COMPLETED, {
+    'phase': STANDARD_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(JOB_COMPLETED, {
+    'time': 'Sat Oct  1 22:11:08 2022', 'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+# Save by jhseo on 2022_10_01-22.15.14; build 2022.HF2 2022_03_21-08.37.34 176360
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].loads['DRAG'].setValues(cf1=6000.0, distributionType=
+    UNIFORM, field='')
+mdb.models['Model-1'].loads['HYDRO_STATIC'].setValues(magnitude=10000000.0)
+mdb.models['Model-1'].loads['SIDE_FORCE_L'].setValues(cf2=1500.0, 
+    distributionType=UNIFORM, field='')
+mdb.models['Model-1'].loads['SIDE_FORCE_R'].setValues(cf2=-1500.0, 
+    distributionType=UNIFORM, field='')
+mdb.models['Model-1'].loads['VERTICAL'].setValues(cf3=15000.0, 
+    distributionType=UNIFORM, field='')
+mdb.jobs['LANDING_GEAR_MULTI_LOAD'].submit(consistencyChecking=OFF)
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 0, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '70 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'D:\\00_FATIGUE\\04_LANDING_GEAR\\LANDING_GEAR_MULTI_LOAD.odb', 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'thunderstreak', 'handle': 32948, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'LANDING_GEAR_MULTI_LOAD', 
+    'memory': 14381.0})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 65210.0, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 1615.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 1, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 2, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 3, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 4, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(STATUS, {'totalTime': 0.0, 
+    'attempts': 1, 'timeIncrement': 2.22e-16, 'increment': 1, 
+    'stepTime': 2.22e-16, 'step': 1, 'jobName': 'LANDING_GEAR_MULTI_LOAD', 
+    'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(END_STEP, {
+    'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(COMPLETED, {
+    'phase': STANDARD_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+mdb.jobs['LANDING_GEAR_MULTI_LOAD']._Message(JOB_COMPLETED, {
+    'time': 'Sat Oct  1 22:24:49 2022', 'jobName': 'LANDING_GEAR_MULTI_LOAD'})
+# Save by jhseo on 2022_10_01-22.25.55; build 2022.HF2 2022_03_21-08.37.34 176360
