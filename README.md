@@ -3,7 +3,7 @@ Repository for sharing the example cases for composite and fatigue analyses usin
 
 # Examples:
 **Composite Specimen Crack Propagation using XFEM**
-![plot](01_COMPOSITE_ANALYSIS/01_COMPOSITE_CRACK_XFEM/CRACK_PROPAGATION.JPG | width=100)
+![plot](01_COMPOSITE_ANALYSIS/01_COMPOSITE_CRACK_XFEM/CRACK_PROPAGATION.JPG)
 
 **Sandwich Form Crack Initiation using XFEM**
 ![plot](01_COMPOSITE_ANALYSIS/02_SANDWICH__BENDING_TEST_CRACK_XFEM/SANDWICH_CRACK_PROPAGATION.JPG)
