@@ -19,3 +19,6 @@ Repository for sharing the example cases for composite and fatigue analyses usin
 
 **Fiber Broken - Continum Shell & Hashin Criteria**
 ![plot](01_COMPOSITE_ANALYSIS/04_HASHIN_CRITERIA_FIBER_DMAGE_CONTINUM_SHELL/FIBER_FAILURE.JPG)
+
+**Landig Gear - Multiload: FE-Safe**
+![plot](02_FATIGUE_ANALYSIS/03_LANDING_GEAR_MULTI_LOADS/LANDING_GEAR_MULTI_LOAD.JPG)
